@@ -1,6 +1,7 @@
 site_name: CheckID Documentation
 site_description: Documentation and user guides for CheckID.no
 copyright: Made on the run 🏃
+site_url: https://docs.checkid.no
 theme:
   name: material
   logo: assets/Logo-white.png
