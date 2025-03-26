@@ -1,1 +1,1 @@
-docs.checkid.no
+echo "docs.checkid.no" > CNAME
