@@ -36,5 +36,6 @@ Want to be part of shaping the future of secure onboarding?
 [Sign up here](https://forms.office.com/e/mLFRhideFV)
 
 ---
+
 Read more on [checkid.no](https://checkid.no)
 CheckID is developed by [fortytwo.io](https://fortytwo.io)
