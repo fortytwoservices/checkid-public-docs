@@ -23,5 +23,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs-material
 
-      - name: Deploy to GitHub Pages with custom domain
-        run: mkdocs gh-deploy --force --cname docs.checkid.no
+      - name: Create CNAME file
+        run: echo "docs.checkid.no" > docs/CNAME
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
