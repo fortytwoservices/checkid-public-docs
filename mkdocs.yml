@@ -1,4 +1,4 @@
-site_name: Docs
+site_name: CheckID Documentation
 site_description: Documentation and user guides for CheckID.no
 copyright: Made on the run 🏃
 theme:
@@ -10,20 +10,11 @@ theme:
       primary: custom
       accent: custom
   features:
-    - navigation.footer
-    - navigation.tracking
-    - navigation.instant
-    - navigation.top
-    - navigation.indexes
-    - header.autohide
-    - search.suggest
-    - search.highlight
-    - search.share
     - content.action.edit
     - content.action.view
     - content.code.copy
-
-repo_url: https://github.com/fortytwoservices/checkid-public-docs
+    - navigation.sections
+    - navigation.expand
 
 extra_css:
   - stylesheets/extra.css

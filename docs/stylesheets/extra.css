@@ -1,13 +1,21 @@
-:root {
-    /* Header background colors */
-    --md-primary-bg-color: #3c29df;
-    --md-primary-bg-color--light: #5c4bed;
-    --md-primary-bg-color--dark: #2a1dc0;
+:root>* {
+    --md-primary-fg-color: #4d3ee4;
+    --md-accent-fg-color: #4d3ee4;
 
-    /* Header text/icon colors (if needed) */
-    --md-primary-fg-color: #ffffff;
+    /* Footer */
+    --md-footer-bg-color--dark: #5e49de;
+    --md-footer-fg-color: #fff;
+    --md-footer-fg-color--light: #fff;
 
-    /* Accent colors (e.g. links/buttons) */
-    --md-accent-bg-color: #3c29df;
-    --md-accent-fg-color: #ffffff;
+    /* Background */
+    --md-default-bg-color: #fff;
+
+    /* Links */
+    --md-typeset-a-color: #2d00d5;
+
+    /* Hide the entire footer */
+    .md-footer {
+        display: none !important;
+    }
+
 }
