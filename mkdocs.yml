@@ -1,0 +1,41 @@
+site_name: Docs
+site_description: Documentation and user guides for CheckID.no
+copyright: Made on the run 🏃
+theme:
+  name: material
+  logo: assets/Logo-white.png
+  favicon: assets/favicon.png
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  features:
+    - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.top
+    - navigation.indexes
+    - header.autohide
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
+
+repo_url: https://github.com/fortytwoservices/checkid-public-docs
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting Started: Getting-Started.md
+  - Identity Providers:
+      - Norwegian BankID: Identity-Providers/Norwegian-BankID.md
+      - Danish MitID: Identity-Providers/Danish-MitID.md
+      - IDPorten: Identity-Providers/IDPorten.md
+  - Guides and tutorials:
+      - User Journey: Guides/User-Journey-Example.md
+      - Custom Domain Setup: Guides/Custom-Domain-Setup.md
+      - Custom Branding: Guides/Custom-Branding.md

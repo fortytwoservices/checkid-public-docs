@@ -1,0 +1,13 @@
+:root {
+    /* Header background colors */
+    --md-primary-bg-color: #3c29df;
+    --md-primary-bg-color--light: #5c4bed;
+    --md-primary-bg-color--dark: #2a1dc0;
+
+    /* Header text/icon colors (if needed) */
+    --md-primary-fg-color: #ffffff;
+
+    /* Accent colors (e.g. links/buttons) */
+    --md-accent-bg-color: #3c29df;
+    --md-accent-fg-color: #ffffff;
+}
