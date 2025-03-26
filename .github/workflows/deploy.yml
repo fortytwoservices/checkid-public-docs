@@ -23,5 +23,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs-material
 
-      - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+      - name: Deploy to GitHub Pages with custom domain
+        run: mkdocs gh-deploy --force --cname docs.checkid.no
