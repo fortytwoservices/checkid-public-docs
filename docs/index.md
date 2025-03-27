@@ -6,7 +6,7 @@ Instead of relying on temporary passwords, manual user setup, and IT bottlenecks
 
 - BankID  
 - Vipps  
-- IDPorten
+- ID-porten
 - MitID (Denmark)
 
 Once verified, users are automatically provisioned with access to their Microsoft Entra ID (Azure AD) account — fast, secure, and fully compliant.

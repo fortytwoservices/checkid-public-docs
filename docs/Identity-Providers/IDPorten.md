@@ -1,4 +1,4 @@
-# Configure IDPorten as idP
+# Configure ID-porten as idP
 
 > **NOTE:**
 > Only relevant for customer who bring their own idP contract/partner.
