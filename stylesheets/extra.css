@@ -1,0 +1,21 @@
+:root>* {
+    --md-primary-fg-color: #4d3ee4;
+    --md-accent-fg-color: #4d3ee4;
+
+    /* Footer */
+    --md-footer-bg-color--dark: #5e49de;
+    --md-footer-fg-color: #fff;
+    --md-footer-fg-color--light: #fff;
+
+    /* Background */
+    --md-default-bg-color: #fff;
+
+    /* Links */
+    --md-typeset-a-color: #2d00d5;
+
+    /* Hide the entire footer */
+    .md-footer {
+        display: none !important;
+    }
+
+}
