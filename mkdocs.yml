@@ -31,3 +31,6 @@ nav:
       - User Journey: Guides/User-Journey-Example.md
       - Custom Domain Setup: Guides/Custom-Domain-Setup.md
       - Custom Branding: Guides/Custom-Branding.md
+  - Conditional access:
+      - Authentication Strength: Conditional-Access/Authentication-Strength.md
+      - Device Compliance: Conditional-Access/Device-Compliance.md

@@ -34,3 +34,6 @@ Configure **Temporary Access Pass** to **target all users** with the below confi
 
 ![alt text](image-2.png)
 
+## Step 3 - Configure the recommended Conditional Access policies
+
+We have several recommended configurations, depending on your situation. 
