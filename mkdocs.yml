@@ -23,11 +23,16 @@ extra_css:
 nav:
   - Home: index.md
   - Getting Started: Getting-Started.md
-  - Identity Providers:
-      - Norwegian BankID: Identity-Providers/Norwegian-BankID.md
-      - Danish MitID: Identity-Providers/Danish-MitID.md
-      - IDPorten: Identity-Providers/IDPorten.md
+  # - Identity Providers:
+  #     - Norwegian BankID: Identity-Providers/Norwegian-BankID.md
+  #     - Danish MitID: Identity-Providers/Danish-MitID.md
+  #     - IDPorten: Identity-Providers/IDPorten.md
   - Guides and tutorials:
-      - User Journey: Guides/User-Journey-Example.md
+      # - User Journey: Guides/User-Journey-Example.md
       - Custom Domain Setup: Guides/Custom-Domain-Setup.md
       - Custom Branding: Guides/Custom-Branding.md
+  - Identity Providers: Identity-Providers/Overview.md
+  - Conditional access:
+      - Onboarding group: Conditional-Access/Onboarding-Group.md
+      - Authentication strength: Conditional-Access/Authentication-Strength.md
+      - Approved or protected app: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
