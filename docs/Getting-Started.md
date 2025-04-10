@@ -24,6 +24,8 @@ Visit the following URL to review and approve the necessary permissions:
 
 ## Step 2 - Configure the recommended Conditional Access policies
 
+> **Note:** This step is only relevant if you have conditional access policies that requires **phishing resistant MFA** or **passwordless MFA** as authentication strength, or requires **app protection policies** or **approved apps** only.
+
 We have several recommended configurations, depending on your situation. There are two "issues" we need to handle during onboarding, which is [app protection](Conditional-Access/Require-Approved-Or-Protected-App-Policy.md) and [authentication strength](Conditional-Access/Authentication-Strength.md). To support the Microsoft recommended approaches, with temporarily exempting the user from certain conditional access policy requirements, CheckID has two features available:
 
 - Automatic maintenance of an Entra ID security group for onboarding users
