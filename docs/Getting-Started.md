@@ -31,9 +31,9 @@ We have several recommended configurations, depending on your situation. There a
 - Automatic maintenance of an Entra ID security group for onboarding users
 - Calling a webhook with information about the user doing the onboarding, where the target webhook can do the same thing as the previous feature (adding a person temporary to a group)
 
-## Step 3 - Configure Temporary Access Pass
+## Step 3 - Configure Temporary Access Pass and Passkeys
 
-Our recommended onboarding approach is to have users register the Microsoft Authenticator app using a [Temporary Access Pass](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass), while getting a passkey enrolled at the same time. This means that the feature Temporary Access Pass and Passkey should be enabled in the tenant. 
+For onboarding users, we get users to register the Microsoft Authenticator app using a [Temporary Access Pass](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass), while getting a passkey enrolled at the same time. This means that the feature Temporary Access Pass and Passkey must be enabled in the tenant.
 
 In the [**Entra portal**](https://entra.microsoft.com/#home), open **Protection** and **Authentication methods**. 
 
@@ -44,3 +44,15 @@ Configure **Passkey (FIDO2)** to **target all users** with the below configurati
 Configure **Temporary Access Pass** to **target all users** with the below configuration:
 
 ![alt text](image-2.png)
+
+## Step 4 - "We also need users to have a password"
+
+We prepare you for being passwordless, but we also understand that many of our customers still need their users to have a password. This can because computers are still hybrid joined, or because they need to sign into Active Directory integrated services that do not do single sign-on. To provide users with the ability to set a password, our approarch uses [Entra ID password write-back](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback) and an Entra ID authentication methods configuration that allows the [Microsoft self service password reset](https://passwordreset.microsoftonline.com/) functionality to be used with only the authenticator app.
+
+![alt text](image-3.png)
+
+This allows the user to set a password without knowing the user account's existing password and any requirement for "change on next logon" etc.
+
+![alt text](image-4.png)
+
+During our user onboarding experience, you can choose whether to show instructions for your users to establish a password, or not to show this instruction step.

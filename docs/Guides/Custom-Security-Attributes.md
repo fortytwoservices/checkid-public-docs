@@ -1,6 +1,6 @@
-# Custom Security Attributes (CSA)
+# Custom Security Attributes
 
-CheckID uses identity providers such as BankID, ID-porten and similar, which mostly provide national identity numbers (NINs) as the only available information about the signed in user. The sensitivity of these numbers vary between countries, but we always recommend storing these values in Entra ID in [**Custom Security Attributes**](https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview).
+CheckID uses identity providers such as BankID, ID-porten and similar, which mostly provide national identity numbers (NINs) as the only available information about the signed in user. The sensitivity of these numbers vary between countries, but we always recommend storing these values in Entra ID in [**Custom Security Attributes (CSA)**](https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview).
 
 Unlike other Entra ID user attributes, CSAs are only readable by users and service principals that have been explicitly granted access.
 

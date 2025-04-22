@@ -25,14 +25,15 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting Started: Getting-Started.md
+  - Getting-Started.md
   - Identity Providers: Identity-Providers/Overview.md
   - Guides and tutorials:
-      - User Journey Example: Guides/User-Journey-Example.md
-      - Custom Domain Setup: Guides/Custom-Domain-Setup.md
-      - Custom Branding: Guides/Custom-Branding.md
-      - Custom Security Attributes: Guides/Custom-Security-Attributes.md
+      - Guides/User-Journey-Example.md
+      - Guides/Custom-Domain-Setup.md
+      - Guides/Custom-Branding.md
+      - Guides/Custom-Security-Attributes.md
+      - Guides/Password-Reset-Configuration.md
   - Conditional access:
-      - Onboarding group: Conditional-Access/Onboarding-Group.md
-      - Authentication strength: Conditional-Access/Authentication-Strength.md
+      - Conditional-Access/Onboarding-Group.md
+      - Conditional-Access/Authentication-Strength.md
       - Approved or protected app: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
