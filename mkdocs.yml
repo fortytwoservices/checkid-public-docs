@@ -25,10 +25,10 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting-Started.md
+  - Getting Started: Getting-Started.md
   - Identity Providers: Identity-Providers/Overview.md
   - Guides and tutorials:
-      - Guides/User-Journey-Example.md
+      - User Journey Example: Guides/User-Journey-Example.md
       - Guides/Custom-Domain-Setup.md
       - Guides/Custom-Branding.md
       - Guides/Custom-Security-Attributes.md
