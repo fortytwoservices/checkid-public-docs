@@ -4,7 +4,7 @@ As described on the [Getting Started](../Getting-Started.md) pages, CheckID uses
 
 ![alt text](../image-3.png)
 
-To allow this configuration, there are some configurations needed in Entra ID, detailed below.
+To allow this configuration, there are some configurations needed in Entra ID, detailed below. This will configure your Entra ID in a very secure fashion, where self service password reset is configured only to be allowed by authenticating using the Microsoft Authenticator app.
 
 ## Disable SMS based password reset
 
