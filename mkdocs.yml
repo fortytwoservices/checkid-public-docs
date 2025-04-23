@@ -2,6 +2,7 @@ site_name: CheckID Documentation
 site_description: Documentation and user guides for CheckID.no
 copyright: Made on the run 🏃
 site_url: https://docs.checkid.no
+
 theme:
   name: material
   logo: assets/Logo-white.png
@@ -10,6 +11,15 @@ theme:
     - scheme: default
       primary: custom
       accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - content.action.edit
     - content.action.view

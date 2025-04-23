@@ -4,18 +4,22 @@
 
     /* Footer */
     --md-footer-bg-color--dark: #5e49de;
-    --md-footer-fg-color: #fff;
-    --md-footer-fg-color--light: #fff;
 
-    /* Background */
-    --md-default-bg-color: #fff;
-
-    /* Links */
+    /* Links (light mode) */
     --md-typeset-a-color: #2d00d5;
+}
 
-    /* Hide the entire footer */
-    .md-footer {
-        display: none !important;
-    }
+/* Light mode only: Add borders to images */
+[data-md-color-scheme="default"] .md-content img {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2px;
+}
 
+/* Dark mode only: Adjust colors for readability */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #4d3ee4;
+    --md-accent-fg-color: #b3aaff;
+    --md-typeset-a-color: #b3aaff;
+    --md-typeset-a-color--hover: #ffffff;
 }
