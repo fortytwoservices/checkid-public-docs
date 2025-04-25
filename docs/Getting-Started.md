@@ -1,5 +1,4 @@
 
-
 ## Configure Consent and Entra ID Settings
 
 To allow CheckID to function correctly, you'll need to configure a few settings in Microsoft Entra ID.
@@ -35,7 +34,7 @@ We have several recommended configurations, depending on your situation. There a
 
 For onboarding users, we get users to register the Microsoft Authenticator app using a [Temporary Access Pass](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass), while getting a passkey enrolled at the same time. This means that the feature Temporary Access Pass and Passkey must be enabled in the tenant.
 
-In the [**Entra portal**](https://entra.microsoft.com/#home), open **Protection** and **Authentication methods**. 
+In the [**Entra portal**](https://entra.microsoft.com/#home), open **Protection** and **Authentication methods**.
 
 Configure **Passkey (FIDO2)** to **target all users** with the below configuration:
 
@@ -47,7 +46,9 @@ Configure **Temporary Access Pass** to **target all users** with the below confi
 
 ## Step 4 - "We also need users to have a password"
 
-We prepare you for being passwordless, but we also understand that many of our customers still need their users to have a password. This can because computers are still hybrid joined, or because they need to sign into Active Directory integrated services that do not do single sign-on. To provide users with the ability to set a password, our approarch uses [Entra ID password write-back](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback) and an Entra ID authentication methods configuration that allows the [Microsoft self service password reset](https://passwordreset.microsoftonline.com/) functionality to be used with only the authenticator app.
+CheckID prepares you for being passwordless, but we also understand that many of our customers still need their users to have a password. This can because computers are still hybrid joined, or because they need to sign into Active Directory integrated services that do not do single sign-on.
+
+To provide users with the ability to set a password, our approarch uses [Entra ID password write-back](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback) and an Entra ID authentication methods configuration that allows the [Microsoft self service password reset](https://passwordreset.microsoftonline.com/) functionality to be used with only the authenticator app.
 
 ![alt text](image-3.png)
 
@@ -55,4 +56,6 @@ This allows the user to set a password without knowing the user account's existi
 
 ![alt text](image-4.png)
 
-During our user onboarding experience, you can choose whether to show instructions for your users to establish a password, or not to show this instruction step.
+During our user onboarding experience, you can choose whether to show instructions for your users to establish a password, or skip and hide this step.
+
+![alt text](image-5.png)
