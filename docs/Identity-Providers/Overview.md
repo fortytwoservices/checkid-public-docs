@@ -20,6 +20,18 @@ Currently we support the below providers.
 
 **Security level:** High
 
+## Finnish eIDs (FTN)
+
+**Countries:** Finland
+
+**Security level:** High
+
+## Swedish BankID
+
+**Countries:** Sweden
+
+**Security level:** High
+
 ## Vipps
 
 **Countries:** Norway, Sweden, Denmark, Finland
