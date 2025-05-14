@@ -39,6 +39,7 @@ nav:
   - Identity Providers: Identity-Providers/Overview.md
   - Guides and tutorials:
       - User Journey Example: Guides/User-Journey-Example.md
+      - User Journey Detailed: Guides/User-Journey-Detailed.md
       - Guides/Custom-Domain-Setup.md
       - Guides/Custom-Branding.md
       - Guides/Custom-Security-Attributes.md
