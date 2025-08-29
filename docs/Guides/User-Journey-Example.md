@@ -2,7 +2,7 @@
 
 Styling, fonts, logo, text etc. are all customizable.
 
-[▶ Watch a demo video](./media/CheckID-Onboarding-Demo-1080.mp4)
+[▶ Watch a demo video](./media/CheckID_Clicked_demo_june2025.mp4)
 
 | [![Step 1](./media/Step1.png){ width="100%" }](./media/Step1.png) | [![Step 2](./media/Step2.png){ width="100%" }](./media/Step2.png) |
 |--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
