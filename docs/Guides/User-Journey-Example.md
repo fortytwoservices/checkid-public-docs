@@ -4,14 +4,14 @@ Styling, fonts, logo, text etc. are all customizable.
 
 [▶ Watch a demo video](./media/CheckID-Onboarding-Demo-1080.mp4)
 
-| [![Step 1](./media/Step%200%20(Shadows).png){ width="100%" }](./media/Step%200%20(Shadows).png) | [![Step 2](./media/Step%201%20(Shadows).png){ width="100%" }](./media/Step%201%20(Shadows).png) |
+| [![Step 1](./media/Step1.png){ width="100%" }](./media/Step1.png) | [![Step 2](./media/Step2.png){ width="100%" }](./media/Step2.png) |
 |--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 | Step 1                                                                                           | Step 2                                                                                           |
 
-| [![Step 3](./media/Step%202%20(Shadows).png){ width="100%" }](./media/Step%202%20(Shadows).png) | [![Step 4](./media/Step%203%20(Shadows).png){ width="100%" }](./media/Step%203%20(Shadows).png) |
+| [![Step 3](./media/Step3.png){ width="100%" }](./media/Step3.png) | [![Step 4](./media/Step4.png){ width="100%" }](./media/Step4.png) |
 |--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 | Step 3                                                                                           | Step 4                                                                                           |
 
-| [![Step 5](./media/Step%204%20(Shadows).png){ width="50%" }](./media/Step%204%20(Shadows).png) |                                                                                                  |
+| [![Step 5](./media/Step5.png){ width="100%" }](./media/Step5.png) | [![Step 6](./media/Step6.png){ width="100%" }](./media/Step6.png)                                                                 |
 |--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| Step 5                                                                                           |                                                                                                  |
+| Step 5                                                                                           | Step 6                                                                                           |
