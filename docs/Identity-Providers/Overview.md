@@ -4,11 +4,15 @@ Currently we support the below providers.
 
 ## ID-porten
 
+<img src="../idporten_login_button.png" width="300"/>
+
 **Countries:** Norway
 
 **Security level:** High
 
 ## MitID
+
+<img src="../mitid_login_button_DK.png" width="300"/>
 
 **Countries:** Denmark
 
@@ -16,11 +20,15 @@ Currently we support the below providers.
 
 ## Norwegian BankID
 
+<img src="../bankid_login_button_NB.png" width="300"/>
+
 **Countries:** Norway
 
 **Security level:** High
 
 ## Finnish eIDs (FTN)
+
+![alt text](./FTN%20Buttons/ftn_login_button_en.png)
 
 **Countries:** Finland
 
@@ -28,11 +36,15 @@ Currently we support the below providers.
 
 ## Swedish BankID
 
+![alt text](./Swedish%20BankID/se-bankid_login_button_se.png)
+
 **Countries:** Sweden
 
 **Security level:** High
 
 ## Vipps
+
+<img src="../vipps_login_button_EN.png" width="300"/>
 
 **Countries:** Norway, Sweden, Denmark, Finland
 

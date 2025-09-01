@@ -58,4 +58,4 @@ This allows the user to set a password without knowing the user account's existi
 
 During our user onboarding experience, you can choose whether to show instructions for your users to establish a password, or skip and hide this step.
 
-![alt text](image-6.png)
+![alt text](Pwd-set-Step.png)
