@@ -26,7 +26,7 @@ Currently we support the below providers.
 
 **Security level:** High
 
-## Finnish eIDs (FTN)
+## Finnish BankID (FTN)
 
 ![alt text](./FTN%20Buttons/ftn_login_button_en.png)
 
@@ -42,7 +42,7 @@ Currently we support the below providers.
 
 **Security level:** High
 
-## Vipps
+## Vipps/MobilePay
 
 <img src="../vipps_login_button_EN.png" width="300"/>
 
