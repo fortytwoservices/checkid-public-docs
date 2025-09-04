@@ -22,14 +22,7 @@ Once signed in, users are automatically provided with access to their Microsoft 
       - Guides the user in adding the account to Microsoft Authenticator
 4. The user can use Microsoft Authenticator to enroll additional devices, such as their PC
 
-## Pilot Program
-
-CheckID is currently in private preview, and we're inviting selected pilot customers to try it out — for free.
-
-Want to be part of shaping the future of secure onboarding?  
-[Sign up here](https://forms.office.com/e/mLFRhideFV)
 
 ---
 
-Read more on [checkid.no](https://checkid.no)
-CheckID is developed by [fortytwo.io](https://fortytwo.io)
+Read more on [checkid.no](https://checkid.no) - CheckID is developed by [fortytwo.io](https://fortytwo.io)

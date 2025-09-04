@@ -1,6 +1,5 @@
 # Custom Branding
 
-> In progress
+CheckID is a customizable experience, where you can add your logo and fav-icon and make slight changes to the colors to make it match your corporate branding guidelines.
 
-CheckID is a customizable experience, where we can add your logo or branding to make it your own.
-This will further increase the users sense of being on the right track, as it will feel familiar.
+In the future we plan to add more customization options, so stay tuned for any announcements!
