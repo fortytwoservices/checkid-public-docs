@@ -1,0 +1,100 @@
+# Password agent installation guide
+
+The Check ID password agent module is a simple module made for listening to change password requests from CheckID, executing the password change in the local Active Directory and reporting back the status of the password change. There are a few steps required to install the module and run it:
+
+## Requirements
+
+- The agent must be running on a domain joined windows server
+- [PowerShell 7.5 or newer installed](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#msi)
+- AD PowerShell installed (```Install-WindowsFeature -Name RSAT-AD-Tools -IncludeAllSubFeature```)
+
+## Step 1 - Install PowerShell modules and requirements
+
+Create the folder ```C:\checkid``` and save the modules EntraIDAccessToken and CheckIDPasswordAgent to separate folders (currently these modules are provided by your CheckID contact persons, but will be published to PowerShell Gallery soon). The folder structure should be like this:
+
+- ```C:\checkid```
+    - ```EntraIDAccessToken```
+    - ```CheckIDPasswordAgent```
+
+## Step 2 - Configure CheckIDPasswordAgent requirements
+
+Run the following as administrator:
+
+```PowerShell
+New-EventLog -LogName "Application" -Source "CheckIDPasswordAgent"
+$Certificate = New-SelfSignedCertificate -Subject "CheckIDAgent" -NotAfter (Get-Date).AddYears(100)
+[System.Convert]::ToBase64String($Certificate.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Cert), "InsertLineBreaks") | Set-Content -Path "CheckIDAgent-$($env:COMPUTERNAME).cer"
+"","Thumbprint:       $($Certificate.ThumbPrint)", "Certificate file: CheckIDAgent-$($env:COMPUTERNAME).cer","Agent id:         $(New-Guid)","" | Write-Host
+```
+
+Open ```certlm.msc```, find the certificate and find **Managed Private Keys**. Allow any account that will be running the CheckID agent **Full access** to the certificate:
+
+![](media/20250912082318.png)
+
+![](media/20250912082503.png)
+
+> **Note:** The gMSA created in step 6 also needs this permission
+
+## Step 3 - Consent to Fortytwo Universe (Our API) and create app registration for agent
+
+1. As a global administrator, [admin consent to this](https://login.microsoftonline.com/common/adminconsent?client_id=2808f963-7bba-4e66-9eee-82d0b178f408).
+
+2. In **Entra ID**, go to **App registrations** and click **New registration**
+
+3. Give it a name and create **Register**
+
+4. Note down the **Client ID** and **Tenant ID**:
+
+![](media/20250905140155.png)
+
+5. Under **Certificates & secrets** upload the certificate file created in Step 2
+
+![](media/20250905140307.png)
+
+6. Under **API permissions**, click **Add a permission**, select **APIs my organization uses** and locate **Fortytwo Universe**
+
+![](media/20250905140407.png)
+
+7. Under **Application permissions** check **checkid_agent.all** and click *Add permissions**.
+
+![](media/20250905140444.png)
+
+8. Click **Grant admin consent**
+
+![](media/20250905140535.png)
+
+## Step 4 - Create the run file for the CheckID Agent
+
+Create ```C:\checkid\run.ps1``` with the following contents:
+
+```PowerShell
+Import-Module ./EntraIDAccessToken -force
+Import-Module ./CheckIDPasswordAgent -force
+
+Add-EntraIDClientCertificateAccessTokenProfile `
+    -Resource "2808f963-7bba-4e66-9eee-82d0b178f408" `
+    -Thumbprint "THUMBPRINT_FROM_STEP2" `
+    -ClientId "CLIENT_ID_FROM_STEP3" `
+    -TenantId "TENANT_ID_FROM_STEP3"
+
+Connect-CheckIDPasswordAgent `
+    -AgentID "AGENTID_FROM_STEP2" `
+    -Verbose
+
+Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
+```
+
+## Step 5 - Try to run the CheckID Agent manually
+
+1. Open a PowerShell and run ```cd c:\checkid ; . c:\checkid\run.ps1```
+
+At this point, you can test out CheckID and see that a password change is received by the agent.
+
+## Step 6 - Run the CheckID agent as a scheduled task
+
+1. Create a gMSA for the scheduled task
+2. Delegate the gMSA the reset password permission in AD
+3. Create a scheduled task running as the gMSA that:
+    - Runs the action ```pwsh -file c:\checkid\run.ps1```
+    - Every 2 minutes (Just in order to restart the task if it fails)
+    - Do not run multiple instances

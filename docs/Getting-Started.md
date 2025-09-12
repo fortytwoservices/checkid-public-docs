@@ -48,14 +48,10 @@ Configure **Temporary Access Pass** to **target all users** with the below confi
 
 CheckID prepares you for being passwordless, but we also understand that many of our customers still need their users to have a password. This can because computers are still hybrid joined, or because they need to sign into Active Directory integrated services that do not do single sign-on.
 
-To provide users with the ability to set a password, our approarch uses [Entra ID password write-back](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback) and an Entra ID authentication methods configuration that allows the [Microsoft self service password reset](https://passwordreset.microsoftonline.com/) functionality to be used with only the authenticator app.
+To provide users with the ability to set a password, CheckID provides a feature that checks the password before the user submits, combined with  an agent based approach, where an agent running locally in Active Directory is used to set the password on the AD user account. The password is then synchronized from AD to Entra ID using [Password Hash Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-phs).
 
-![alt text](image-3.png)
+Example on what this looks like for users (Norwegian screenshot as example):
 
-This allows the user to set a password without knowing the user account's existing password and any requirement for "change on next logon" etc.
+![alt text](image-7.png)
 
-![alt text](image-4.png)
-
-During our user onboarding experience, you can choose whether to show instructions for your users to establish a password, or skip and hide this step.
-
-![alt text](Pwd-set-Step.png)
+[To configure the agent, follow this guide.](./Configuring-Password-Agent.md)
