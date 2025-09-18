@@ -8,13 +8,14 @@ The Check ID password agent module is a simple module made for listening to chan
 - [PowerShell 7.5 or newer installed](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#msi)
 - AD PowerShell installed (```Install-WindowsFeature -Name RSAT-AD-Tools -IncludeAllSubFeature```)
 
-## Step 1 - Install PowerShell modules and requirements
+## Step 1 - Install PowerShell modules
 
-Create the folder ```C:\checkid``` and save the modules EntraIDAccessToken and CheckIDPasswordAgent to separate folders (currently these modules are provided by your CheckID contact persons, but will be published to PowerShell Gallery soon). The folder structure should be like this:
+Run the below as administrator in order to install the required modules from PowerShell Gallery:
 
-- ```C:\checkid```
-    - ```EntraIDAccessToken```
-    - ```CheckIDPasswordAgent```
+```PowerShell
+Install-Module EntraIDAccessToken -Scope AllUsers
+Install-Module Fortytwo.CheckID.PasswordAgent -Scope AllUsers
+```
 
 ## Step 2 - Configure CheckIDPasswordAgent requirements
 
@@ -68,8 +69,8 @@ Open ```certlm.msc```, find the certificate and find **Managed Private Keys**. A
 Create ```C:\checkid\run.ps1``` with the following contents:
 
 ```PowerShell
-Import-Module ./EntraIDAccessToken -force
-Import-Module ./CheckIDPasswordAgent -force
+Import-Module EntraIDAccessToken -force
+Import-Module Fortytwo.CheckID.PasswordAgent -force
 
 Add-EntraIDClientCertificateAccessTokenProfile `
     -Resource "2808f963-7bba-4e66-9eee-82d0b178f408" `
