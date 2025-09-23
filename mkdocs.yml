@@ -43,7 +43,7 @@ nav:
       - Guides/Custom-Domain-Setup.md
       - Guides/Custom-Branding.md
       - Guides/Custom-Security-Attributes.md
-      - Guides/Password-Reset-Configuration.md
+      - Guides/Configuring-Password-Agent.md
   - Conditional access:
       - Conditional-Access/Onboarding-Group.md
       - Conditional-Access/Authentication-Strength.md
