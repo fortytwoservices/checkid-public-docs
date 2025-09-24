@@ -69,7 +69,8 @@ Open ```certlm.msc```, find the certificate and find **Managed Private Keys**. A
 Create ```C:\checkid\run.ps1``` with the following contents:
 
 ```PowerShell
-Import-Module EntraIDAccessToken -force
+# Install and auto update the PasswordAgent module
+Install-Module Fortytwo.CheckID.PasswordAgent -Confirm:$false -Force -Verbose -Scope CurrentUser
 Import-Module Fortytwo.CheckID.PasswordAgent -force
 
 Add-EntraIDClientCertificateAccessTokenProfile `
