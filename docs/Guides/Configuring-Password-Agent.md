@@ -8,23 +8,16 @@ The Check ID password agent module is a simple module made for listening to chan
 - [PowerShell 7.5 or newer installed](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#msi)
 - AD PowerShell installed (```Install-WindowsFeature -Name RSAT-AD-Tools -IncludeAllSubFeature```)
 
-## Step 1 - Install PowerShell modules
+## Step 1 - Configure CheckIDPasswordAgent requirements
 
-Run the below as administrator in order to install the required modules from PowerShell Gallery:
-
-```PowerShell
-Install-Module EntraIDAccessToken -Scope AllUsers
-Install-Module Fortytwo.CheckID.PasswordAgent -Scope AllUsers
-```
-
-## Step 2 - Configure CheckIDPasswordAgent requirements
-
-Run the following as administrator:
+Run the following as administrator, while will register an event source in the event log and create a certificate for authentication:
 
 ```PowerShell
 New-EventLog -LogName "Application" -Source "CheckIDPasswordAgent"
+
 $Certificate = New-SelfSignedCertificate -Subject "CheckIDAgent" -NotAfter (Get-Date).AddYears(100)
 [System.Convert]::ToBase64String($Certificate.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Cert), "InsertLineBreaks") | Set-Content -Path "CheckIDAgent-$($env:COMPUTERNAME).cer"
+
 "","Thumbprint:       $($Certificate.ThumbPrint)", "Certificate file: CheckIDAgent-$($env:COMPUTERNAME).cer","Agent id:         $(New-Guid)","" | Write-Host
 ```
 
@@ -34,9 +27,9 @@ Open ```certlm.msc```, find the certificate and find **Managed Private Keys**. A
 
 ![](media/20250912082503.png)
 
-> **Note:** The gMSA created in step 6 also needs this permission
+> **Note:** The gMSA created in step 5 also needs this permission
 
-## Step 3 - Consent to Fortytwo Universe (Our API) and create app registration for agent
+## Step 2 - Consent to Fortytwo Universe (Our API) and create app registration for agent
 
 1. As a global administrator, [admin consent to this](https://login.microsoftonline.com/common/adminconsent?client_id=2808f963-7bba-4e66-9eee-82d0b178f408).
 
@@ -64,7 +57,7 @@ Open ```certlm.msc```, find the certificate and find **Managed Private Keys**. A
 
 ![](media/20250905140535.png)
 
-## Step 4 - Create the run file for the CheckID Agent
+## Step 3 - Create the run file for the CheckID Agent
 
 Create ```C:\checkid\run.ps1``` with the following contents:
 
@@ -83,16 +76,16 @@ Connect-CheckIDPasswordAgent `
     -AgentID "AGENTID_FROM_STEP2" `
     -Verbose
 
-Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
+Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose 
 ```
 
-## Step 5 - Try to run the CheckID Agent manually
+## Step 4 - Try to run the CheckID Agent manually
 
 1. Open a PowerShell and run ```cd c:\checkid ; . c:\checkid\run.ps1```
 
 At this point, you can test out CheckID and see that a password change is received by the agent.
 
-## Step 6 - Run the CheckID agent as a scheduled task
+## Step 5 - Run the CheckID agent as a scheduled task
 
 ### Create a gMSA for the scheduled task
 
