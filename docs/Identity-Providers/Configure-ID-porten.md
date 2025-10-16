@@ -12,8 +12,8 @@ Følgende må fylles ut og/eller endres fra standardverdier:
 |-|-|
 | Applikasjonstype | web |
 | Autentiseringsmetode | client_secret_post |
-| Redirect uri | https://onboarding.din-organisasjon.no/signin-oidc |
-| Post logout redirect uri | https://onboarding.din-organisasjon.no/completed |
+| Redirect uri | https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/signin-oidc |
+| Post logout redirect uri | https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed |
 
 Det vi trenger tilbake:
 
@@ -40,12 +40,13 @@ https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/s
 
 Og følgende som post logout redirect urier:
 
-https://kundeinstans.checkid.no/completed,https://onboarding.ditt-selskap.no/completed
+https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed
 
 ![alt text](image-4.png)
 
 **Lagre klienten**. Etter at klienten er laget kan du opprette client secret ved å trykke **Generer client secret**:
 
 ![alt text](image-5.png)
+
 
 Din CheckID-kontakt har må få oversendt client id og client secret til applikasjonen på en sikker måte.
