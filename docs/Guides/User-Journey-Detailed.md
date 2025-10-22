@@ -40,7 +40,7 @@ The user will be told to click the set password button, and clicking it will ope
 
 ![alt text](./media/Group%2050.png)
 
-In the dialogue the user will be prompted to set a password. Note that the user will be able to see whether they meet all the password requirements. 
+In the dialogue the user will be prompted to set a password. Note that the user will be able to see whether they meet all the password requirements.
 
 ![alt text](./media/Pwd-set-Step.png)
 
