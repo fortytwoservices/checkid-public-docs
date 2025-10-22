@@ -8,7 +8,7 @@ The Check ID password agent module is a simple module made for listening to chan
 - [PowerShell 7.5 or newer installed](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows#msi)
 - AD PowerShell installed, with all features: ```Install-WindowsFeature -Name RSAT-AD-Tools -IncludeAllSubFeature```
 
-## Step 1 - Install required PowerShell modules
+## Step 1: Install required PowerShell modules
 
 Open a PowerShell 7 window (pwsh.exe) as **administrator** and install the required modules from PowerShell Gallery:
 
@@ -33,7 +33,7 @@ Install-Module Fortytwo.CheckID.PasswordAgent -Scope AllUsers
 
 >**Note!**
 >
->If modules cannot be installed from PowerShell Gallery they must be downloaded manually into the checkid folder (created in [Step 2](#step-2---configure-checkidpasswordagent-requirements)).
+>If modules cannot be installed from PowerShell Gallery they must be downloaded manually into the checkid folder (created in [Step 2](#step-2-configure-checkidpasswordagent-requirements)).
 >
 >Files downloaded from the internet can be tagged with script execution block, for security reasons.
 >To remove this protection, and make sure all files in the checkid folder can be processed, run the following:  
@@ -44,7 +44,7 @@ Install-Module Fortytwo.CheckID.PasswordAgent -Scope AllUsers
 >
 >```Get-ChildItem -Recurse c:\checkid | Unblock-File -Verbose```
 
-## Step 2 - Configure CheckIDPasswordAgent requirements
+## Step 2: Configure CheckIDPasswordAgent requirements
 
 1. Run the following (also as **administrator**):
 
@@ -72,7 +72,7 @@ Certificate file: CheckIDAgent-<SERVERNAME>.cer
 Agent id:         a628f707-6c25-596e-8424-4249fa0e14b9
 ```
 
-## Step 3 - Consent to Fortytwo Universe (our API) and create an Entra app registration for the password reset agent
+## Step 3: Consent to Fortytwo Universe (our API) and create an Entra app registration for the password reset agent
 
 1. As a **global administrator**, admin consent the Fortytwo Universe API: [https://login.microsoftonline.com/common/adminconsent?client_id=2808f963-7bba-4e66-9eee-82d0b178f408](https://login.microsoftonline.com/common/adminconsent?client_id=2808f963-7bba-4e66-9eee-82d0b178f408)  
 ![Grant admin consent for Fortytwo Universe API](media/adminconsentuniverse.png)
@@ -93,7 +93,7 @@ Agent id:         a628f707-6c25-596e-8424-4249fa0e14b9
 1. Copy and save the **Client ID** and **Tenant ID**
 ![Get app id and directory id](media/20250905140155.png)
 
-1. Under **Certificates & secrets**, upload the certificate file created in [***Step 2***](#step-2---configure-checkidpasswordagent-requirements)
+1. Under **Certificates & secrets**, upload the certificate file created in [***Step 2***](#step-2-configure-checkidpasswordagent-requirements)
 ![Upload certificate](media/20250905140307.png)
 
 1. Under **API permissions**, click **Add a permission**, select **APIs my organization uses** and locate **Fortytwo Universe**
@@ -105,10 +105,10 @@ Agent id:         a628f707-6c25-596e-8424-4249fa0e14b9
 1. Select **Grant admin consent**
 ![Grant admin consent for Fortytwo Universe API permission](media/20250905140535.png)
 
-## Step 4 - Create a run file to test the CheckID Agent configuration
+## Step 4: Create a run file to test the CheckID Agent configuration
 
 Create a new PowerShell file ```C:\checkid\run.ps1```.
-Replace placeholder values (for thumbprint, clientid, tenantid) with output from [Step 2 - Configure CheckIDPasswordAgent requirements](#step-2---configure-checkidpasswordagent-requirements):
+Replace placeholder values (for thumbprint, clientid, tenantid) with output from [Step 2 - Configure CheckIDPasswordAgent requirements](#step-2-configure-checkidpasswordagent-requirements):
 
 ```PowerShell
 # Install and auto update the PasswordAgent module
@@ -128,7 +128,7 @@ Connect-CheckIDPasswordAgent `
 Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
 ```
 
-## Step 5 - Test the CheckID Agent manually
+## Step 5: Test the CheckID Agent manually
 
 1. Open a PowerShell 7 window (pwsh.exe) as **administrator**
 
@@ -167,7 +167,23 @@ Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
    There should now be logs with source **CheckIDPasswordAgent**.
    ![CheckIDPasswordAgent event logs](media/eventlogs.png)
 
-## Step 6 - Create and run the CheckID Agent as a scheduled task
+### PowerShell Execution Policy
+
+If script execution is stopped you can temporarily (or permanently) modify the current execution policy:
+
+```PowerShell
+Get-ExecutionPolicy -List
+$originalExecutionPolicy = Get-ExecutionPolicy -Scope CurrentUser
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+```
+
+When you have verified that the CheckID Agent can run successfully, set execution policy back to it's original setting:
+
+```PowerShell
+Set-ExecutionPolicy -ExecutionPolicy $originalExecutionPolicy -Scope CurrentUser -Force
+```
+
+## Step 6: Create and run the CheckID Agent as a scheduled task
 
 1. As a user with **domain admin** privileges, create a gMSA (group managed service account) for the scheduled task to run as:
 
@@ -288,7 +304,7 @@ Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
 
    1. Download [StartStop-CheckIDAgentListener.ps1](https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/StartStop-CheckIDAgentListener.ps1) from Fortytwo public GitHub repository and save it in c:\checkid
 
-   1. Configure **StartStop-CheckIDAgentListener.ps1** with configuration from **run.ps1**, which was verified in [Step 5 - Test the Checkid Agent manually](#step-5---test-the-checkid-agent-manually)  
+   1. Configure **StartStop-CheckIDAgentListener.ps1** with configuration from **run.ps1**, which was verified in [Step 5 - Test the Checkid Agent manually](#step-5-test-the-checkid-agent-manually)  
     Use a text editor, open **c:\checkid\run.ps1**, copy and replace the *Add-EntraClientCertificateAccessTokenprofile* and *Connect-CheckIDPasswordAgent* settings placeholder settings in **StartStop-CheckIDAgentListener.ps1** (shown below):
 
     ```PowerShell
@@ -329,19 +345,3 @@ Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
 
    1. Configure scheduled task to "Run whether user is logged on or not"
    ![Scheduled task run options](media/20250922135040.png)
-
-## PowerShell Execution Policy
-
-If script execution is stopped you can temporarily (or permanently) modify the current execution policy:
-
-```PowerShell
-Get-ExecutionPolicy -List
-$originalExecutionPolicy = Get-ExecutionPolicy -Scope CurrentUser
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-```
-
-When you have verified that the CheckID Agent can run successfully, set execution policy back to it's original setting:
-
-```PowerShell
-Set-ExecutionPolicy -ExecutionPolicy $originalExecutionPolicy -Scope CurrentUser -Force
-```
