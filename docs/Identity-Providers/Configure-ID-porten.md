@@ -44,7 +44,7 @@ Navngi applikasjon, eksempelvis **Onboarding med CheckID**, og benytt følgende 
 |-|-|
 | web| client_secret_post |
 
->Per April 2025 så fungerer ikke knappen **Generer client secret** før du har laget, og **lagret**, applikasjonen.
+>Per april 2025 så fungerer ikke knappen **Generer client secret** før du har laget, og **lagret**, applikasjonen.
 
 >![Generer client secret](./media/image-2.png)
 
