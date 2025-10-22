@@ -165,6 +165,10 @@ Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
     >
     >You may get stopped by strict [***script execution policy***](#powershell-execution-policy).
 
+1. Open Event Viewer, expand Windows Logs and look into Application event log.
+   There should now be logs with source **CheckIDPasswordAgent**.
+   ![CheckIDPasswordAgent event logs](media/eventlogs.png)
+
 ### PowerShell Execution Policy
 
 >If script execution is stopped you can temporarily (or permanently) modify the current execution policy:
@@ -180,10 +184,6 @@ When you have verified that the CheckID Agent can run successfully, set executio
 ```PowerShell
 Set-ExecutionPolicy -ExecutionPolicy $originalExecutionPolicy -Scope CurrentUser -Force
 ```
-
-1. Open Event Viewer, expand Windows Logs and look into Application event log.
-   There should now be logs with source **CheckIDPasswordAgent**.
-   ![CheckIDPasswordAgent event logs](media/eventlogs.png)
 
 ## Step 6 - Create and run the CheckID Agent as a scheduled task
 
