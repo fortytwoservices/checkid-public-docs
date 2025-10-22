@@ -32,6 +32,7 @@ extra_css:
 
 markdown_extensions:
   - attr_list
+  - pymdownx.superfences
 
 nav:
   - Home: index.md
