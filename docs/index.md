@@ -18,10 +18,9 @@ Once signed in, users are automatically provided with access to their Microsoft 
 2. They choose their [preferred authentication method](Identity-Providers/Overview.md).
 3. After secure authentication, CheckID:
       - Connects to your Microsoft Entra ID tenant
-      - Creates a [Temporary Access Pass (TAP)](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass)
+      - Creates a [Temporary Access Pass (TAP)](https://learn.microsoft.com/entra/identity/authentication/howto-authentication-temporary-access-pass)
       - Guides the user in adding the account to Microsoft Authenticator
 4. The user can use Microsoft Authenticator to enroll additional devices, such as their PC
-
 
 ---
 
