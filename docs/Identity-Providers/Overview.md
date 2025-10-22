@@ -10,6 +10,8 @@ Currently we support the below providers.
 
 **Security level:** High
 
+[ID-porten configuration guide](./Configure-ID-porten.md)
+
 ## MitID
 
 <img src="../mitid_login_button_DK.png" width="300"/>
