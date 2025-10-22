@@ -1,3 +1,5 @@
+# Identity providers
+
 We are continously working to support more identity providers. Please send us a request if you have a particular identity provider you would like to see added to CheckID.
 
 Currently we support the below providers.
@@ -30,7 +32,7 @@ Currently we support the below providers.
 
 ## Finnish BankID (FTN)
 
-![alt text](./FTN%20Buttons/ftn_login_button_en.png)
+![Finnish BankID](./FTN%20Buttons/ftn_login_button_en.png)
 
 **Countries:** Finland
 
@@ -38,7 +40,7 @@ Currently we support the below providers.
 
 ## Swedish BankID
 
-![alt text](./Swedish%20BankID/se-bankid_login_button_se.png)
+![Swedish BankID](./Swedish%20BankID/se-bankid_login_button_se.png)
 
 **Countries:** Sweden
 

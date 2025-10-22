@@ -2,18 +2,18 @@
 
 > Written in Norwegian, as this is only relevant for Norwegians.
 
-For å sette opp kobling mot ID-porten trenger CheckID en applikasjon registrert i Digidir's Samarbeidsportal. 
+For å sette opp kobling mot ID-porten trenger CheckID en applikasjon registrert i Digidir's Samarbeidsportal.
 
 ## Kortvarianten
 
-Følgende må fylles ut og/eller endres fra standardverdier: 
+Følgende må fylles ut og/eller endres fra standardverdier:
 
 | Innstilling | Verdi |
 |-|-|
 | Applikasjonstype | web |
 | Autentiseringsmetode | client_secret_post |
-| Redirect uri | https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/signin-oidc |
-| Post logout redirect uri | https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed |
+| Redirect uri | <https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/signin-oidc> |
+| Post logout redirect uri | <https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed> |
 
 Det vi trenger tilbake:
 
@@ -24,29 +24,35 @@ Det vi trenger tilbake:
 
 Logg på [Samarbeidsportalen](https://samarbeid.digdir.no/), finn **Selvbetjening** og velg **Legg til klient**.
 
-![alt text](image.png)
+![Selvbetjening - legg til klient](./media/image.png)
 
-Navngi applikasjonen **Onboarding** eller noe liknende, og sørg for at egenkaper er konfigurert med Applikasjonstype **Web**, og **client_secret_post**. Per April 2025 så fungerer ikke knappen **Generere client secret** før etter at du har laget applikasjonen, så det gjøres etterpå.
+Navngi applikasjonen **Onboarding** eller noe liknende, og sørg for at egenkaper er konfigurert med Applikasjonstype **Web**, og **client_secret_post**.
 
-![](image-1.png)
+>Per April 2025 så fungerer ikke knappen **Generer client secret** før ***etter*** at du har laget applikasjonen..
+>![Generer client secret](./media/image-2.png)
 
-Under **Levetid & tokens** lar du alt stå som standard.
+![Legg til ID-porten klient](./media/image-1.png)
 
-![alt text](image-3.png)
+Under **Levetid & Tokens** lar du alt stå som standard.
+
+![Levetid & Tokens](./media/image-3.png)
 
 Under **URI** setter du følgende verdi som redirect uri:
 
-https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/signin-oidc
+| |
+|-|
+| <https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/signin-oidc> |
 
-Og følgende som post logout redirect urier:
+Og følgende som post logout redirect uri-er:
 
-https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed
+| |
+|-|
+| <https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed> |
 
-![alt text](image-4.png)
+![URI-er](./media/image-4.png)
 
 **Lagre klienten**. Etter at klienten er laget kan du opprette client secret ved å trykke **Generer client secret**:
 
-![alt text](image-5.png)
-
+![Lagre og generer secret](./media/image-5.png)
 
 Din CheckID-kontakt har må få oversendt client id og client secret til applikasjonen på en sikker måte.
