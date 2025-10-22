@@ -211,7 +211,7 @@ Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
 
     The **PowerShell** way
 
-    1. Download [Delegate-PasswordReset.ps1]([https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/Delegate-PasswordReset.ps1), from Fortytwo public GitHub repository.
+    1. Download [Delegate-PasswordReset.ps1](https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/Delegate-PasswordReset.ps1), from Fortytwo public GitHub repository.
     1. Run script as a user with **domain admin** privileges. Provide group managed service account name and distinguished name of where to apply the reset password privilege:  
     ```Delegate-PasswordReset.ps1 -AccountSam "checkidagent$" -DistinguishedName "OU=users,OU=organization,DC=fabrikam,DC=com"```
 
