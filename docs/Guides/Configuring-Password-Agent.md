@@ -139,6 +139,8 @@ Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
     >**Note!**
     >
     >The reset password operation will only be successful if your user holds sufficient Active Directory privileges
+    >
+    >If you get stopped by strict execution policy see *[PowerShell execution policy](#powershell-execution-policy)*.
 
     If the agent starts successfully it will create output similar like this:
 
@@ -161,29 +163,9 @@ Start-CheckIDPasswordAgentListener -Sleep 2 -Verbose -Debug
     VERBOSE: No requests found, sleeping for 2 seconds
     ```
 
-    >**Note**!
-    >
-    >You may get stopped by strict [***script execution policy***](#powershell-execution-policy).
-
 1. Open Event Viewer, expand Windows Logs and look into Application event log.
    There should now be logs with source **CheckIDPasswordAgent**.
    ![CheckIDPasswordAgent event logs](media/eventlogs.png)
-
-### PowerShell Execution Policy
-
->If script execution is stopped you can temporarily (or permanently) modify the current execution policy:
-
-```PowerShell
-Get-ExecutionPolicy -List
-$originalExecutionPolicy = Get-ExecutionPolicy -Scope CurrentUser
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-```
-
-When you have verified that the CheckID Agent can run successfully, set execution policy back to it's original setting:
-
-```PowerShell
-Set-ExecutionPolicy -ExecutionPolicy $originalExecutionPolicy -Scope CurrentUser -Force
-```
 
 ## Step 6 - Create and run the CheckID Agent as a scheduled task
 
@@ -347,3 +329,19 @@ Set-ExecutionPolicy -ExecutionPolicy $originalExecutionPolicy -Scope CurrentUser
 
    1. Configure scheduled task to "Run whether user is logged on or not"
    ![Scheduled task run options](media/20250922135040.png)
+
+## PowerShell Execution Policy
+
+If script execution is stopped you can temporarily (or permanently) modify the current execution policy:
+
+```PowerShell
+Get-ExecutionPolicy -List
+$originalExecutionPolicy = Get-ExecutionPolicy -Scope CurrentUser
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+```
+
+When you have verified that the CheckID Agent can run successfully, set execution policy back to it's original setting:
+
+```PowerShell
+Set-ExecutionPolicy -ExecutionPolicy $originalExecutionPolicy -Scope CurrentUser -Force
+```
