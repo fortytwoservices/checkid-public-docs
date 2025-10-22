@@ -1,16 +1,14 @@
-# Authentication strength
+# Authentication Strengths
 
->
-> This is only necessary if you have policies requiring either **Passwordless MFA** or **Phising resistant MFA**
->
+> This is only necessary if you have policies requiring either **Passwordless MFA** or **Phising-resistant MFA**
 
-For any organization that has policies that requires users to satisfy the built-in authentication strength **Passwordless MFA** or **Phising resistant MFA**, you'll notice that neither of these includes **Temporary Access Pass**:
+For any organization that has policies that requires users to satisfy the built-in authentication strength **Passwordless MFA** or **Phising-resistant MFA**, you'll notice that neither of these includes **Temporary Access Pass**:
 
-![alt text](image-2.png)
+![Passwordless MFA settings](./media/image-2.png)
 
-![alt text](image-3.png)
+![Phising-resistant MFA settings](./media/image-3.png)
 
-This means that a **Temporary Access Pass** will not be able to satisfy the policies and the onboarding will fail. To fix this, you have some options, [as documented by Microsoft](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-support-authenticator-passkey#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
+This means that a **Temporary Access Pass** will not be able to satisfy the policies and the onboarding will fail. To fix this, you have some options, [as documented by Microsoft](https://learn.microsoft.com/entra/identity/authentication/how-to-support-authenticator-passkey#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
 
 In summary, you have these options:
 

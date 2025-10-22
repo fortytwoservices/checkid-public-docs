@@ -51,6 +51,6 @@ To provide users with the ability to set a password, CheckID provides a feature 
 
 Example on what this looks like for users (Norwegian screenshot as example):
 
-![Sett passord](image-7.png)
+![Sett passord](./media/image-7.png)
 
 To configure the on-prem agent, see [Password Agent Installation Guide.](./Guides/Configuring-Password-Agent.md)

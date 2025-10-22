@@ -1,8 +1,8 @@
-# Password Reset Configuration 
+# Password Reset Configuration
 
 As described on the [Getting Started](../Getting-Started.md) pages, CheckID uses the Microsoft self service password reset functionality together with password write-back for allowing users to set a password. The user authenticates with the Microsoft Authenticator app that was onboarded with CheckID:
 
-![alt text](../image-3.png)
+![Auth methods](./media/pwd-reset-image-3.png)
 
 To allow this configuration, there are some configurations needed in Entra ID, detailed below. This will configure your Entra ID in a very secure fashion, where self service password reset is configured only to be allowed by authenticating using the Microsoft Authenticator app.
 
@@ -12,21 +12,21 @@ To allow this configuration, there are some configurations needed in Entra ID, d
 
 We recommend disabling SMS based password reset, as it is considered unsecure and will eventually be deprecated by Microsoft.
 
-In the [**Entra portal**](https://entra.microsoft.com/#home), open **Protection** and **Authentication methods**. 
+In the [**Entra portal**](https://entra.microsoft.com/#home), open **Protection** and **Authentication methods**.
 
 Disable the **SMS** method:
 
-![alt text](image.png)
+![SMS method](./media/pwd-reset-image.png)
 
 ## Disable Phone based password reset
 
 We recommend disabling phone based password reset, as it is considered unsecure and will eventually be deprecated by Microsoft.
 
-In the [**Entra portal**](https://entra.microsoft.com/#home), open **Protection** and **Authentication methods**. 
+In the [**Entra portal**](https://entra.microsoft.com/#home), open **Protection** and **Authentication methods**.
 
 Disable the **Voice call** method:
 
-![alt text](image-1.png)
+![Voice call settings](./media/pwdreset-image-1.png)
 
 ## Disable Email OTP based password reset
 
@@ -34,7 +34,7 @@ We recommend disabling the Email OTP based password reset method, as in general 
 
 Disable the **Email OTP** method:
 
-![alt text](image-2.png)
+![Email OTP settings](./media/pwd-reset-image-2.png)
 
 ## Switch authentication methods migration status
 
@@ -42,8 +42,8 @@ Microsoft is moving away from the separate configuration of self service passwor
 
 Make sure you have your methods correctly configured according to the below recommendation:
 
-![alt text](image-3.png)
+![Auth methods - Manage migration](./media/pwd-reset-image-3.png)
 
 Switch the **Migration status** to **Complete**.
 
-![alt text](image-4.png)
+![Auth methods - Migration complete](./media/pwd-reset-image-4.png)
