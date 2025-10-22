@@ -1,6 +1,6 @@
 # ID-porten konfigurasjon
 
-For å bruke Digitaliseringsdirektoratet ID-porten løsning kreves det tilgang til [Samarbeidsportalen]([text](https://samarbeid.digdir.no/)). Deretter 
+For å bruke Digitaliseringsdirektoratet ID-porten løsning kreves det tilgang til [Samarbeidsportalen]([text](https://samarbeid.digdir.no/)).
 
 ![Logg inn i Samarbeidsportalen](../Guides/media/samarbinnlogg.png)
 
