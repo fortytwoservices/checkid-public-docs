@@ -1,0 +1,1242 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and user guides for CheckID.no">
+      
+      
+      
+        <link rel="canonical" href="https://docs.checkid.no/Guides/Configuring-Password-Agent/">
+      
+      
+        <link rel="prev" href="../Custom-Security-Attributes/">
+      
+      
+        <link rel="next" href="../../Conditional-Access/Onboarding-Group/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Password Agent Installation Guide - CheckID Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#password-agent-installation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CheckID Documentation" class="md-header__button md-logo" aria-label="CheckID Documentation" data-md-component="logo">
+      
+  <img src="../../assets/Logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CheckID Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Password Agent Installation Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CheckID Documentation" class="md-nav__button md-logo" aria-label="CheckID Documentation" data-md-component="logo">
+      
+  <img src="../../assets/Logo-white.png" alt="logo">
+
+    </a>
+    CheckID Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Identity-Providers/Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identity Providers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides and tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Guides and tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Journey-Example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Journey Example
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Journey-Detailed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Journey Detailed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Custom-Domain-Setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Domain Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Custom-Branding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Branding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Custom-Security-Attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Security Attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Password Agent Installation Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Password Agent Installation Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-required-powershell-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Install required PowerShell modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configure-checkidpasswordagent-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configure CheckIDPasswordAgent requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-consent-to-fortytwo-universe-our-api-and-create-an-entra-app-registration-for-the-password-reset-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Consent to Fortytwo Universe (our API) and create an Entra app registration for the password reset agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-a-run-file-to-test-the-checkid-agent-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Create a run file to test the CheckID Agent configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-test-the-checkid-agent-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Test the CheckID Agent manually
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Test the CheckID Agent manually">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell-execution-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell Execution Policy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-and-run-the-checkid-agent-as-a-scheduled-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Create and run the CheckID Agent as a scheduled task
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Conditional access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Conditional access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conditional-Access/Onboarding-Group/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Onboarding Group
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conditional-Access/Authentication-Strength/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Strengths
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conditional-Access/Require-Approved-Or-Protected-App-Policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Approved or protected app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-required-powershell-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Install required PowerShell modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configure-checkidpasswordagent-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configure CheckIDPasswordAgent requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-consent-to-fortytwo-universe-our-api-and-create-an-entra-app-registration-for-the-password-reset-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Consent to Fortytwo Universe (our API) and create an Entra app registration for the password reset agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-a-run-file-to-test-the-checkid-agent-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Create a run file to test the CheckID Agent configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-test-the-checkid-agent-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Test the CheckID Agent manually
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Test the CheckID Agent manually">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell-execution-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell Execution Policy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-and-run-the-checkid-agent-as-a-scheduled-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Create and run the CheckID Agent as a scheduled task
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="password-agent-installation-guide">Password Agent Installation Guide</h1>
+<p>The Check ID password agent module is a simple module made for listening to change password requests from CheckID, executing the password change in the local Active Directory (AD) and reporting back the status of the password change. There are a few steps required to install the module and run it:</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>The agent must be running on a domain joined windows server</li>
+<li><a href="https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows#msi">PowerShell 7.5 or newer installed</a></li>
+<li>AD PowerShell installed, with all features: <code>Install-WindowsFeature -Name RSAT-AD-Tools -IncludeAllSubFeature</code></li>
+</ul>
+<h2 id="step-1-install-required-powershell-modules">Step 1: Install required PowerShell modules</h2>
+<p>Open a PowerShell 7 window (pwsh.exe) as <strong>administrator</strong> and install the required modules from PowerShell Gallery:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">EntraIDAccessToken</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
+<span class="nb">Install-Module</span> <span class="n">Fortytwo</span><span class="p">.</span><span class="n">CheckID</span><span class="p">.</span><span class="n">PasswordAgent</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note!</strong></p>
+<p>You may be prompted to confirm the installation from 'PSGallery'.</p>
+<p>Enter '<strong>A</strong>' to allow current, and all future, modules from PSGallery to be installed, without prompting  </p>
+<p>Enter '<strong>Y</strong>' to allow installation of only current module</p>
+</blockquote>
+<p><strong><em>Untrusted repository</em></strong><br />
+<em>You are installing the modules from an untrusted repository.</em><br />
+<em>If you trust this repository, change its InstallationPolicy value by running the Set-PSRepository cmdlet.</em>.
+<em>Are you sure you want to install the modules from 'PSGallery'?</em><br />
+<em>[</em><em>Y</em><em>] Yes  [</em><em>A</em><em>] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):</em></p>
+<blockquote>
+<p><strong>Note!</strong></p>
+<p>If modules cannot be installed from PowerShell Gallery they must be downloaded manually into the checkid folder (created in <a href="#step-2-configure-checkidpasswordagent-requirements">Step 2</a>).</p>
+<p>Files downloaded from the internet can be tagged with script execution block, for security reasons.
+To remove this protection, and make sure all files in the checkid folder can be processed, run the following:  </p>
+<p><code>Get-ChildItem -Recurse c:\checkid | Unblock-File -WhatIf</code></p>
+<p>If it looks OK, run again without <em>-WhatIf</em>:  </p>
+<p><code>Get-ChildItem -Recurse c:\checkid | Unblock-File -Verbose</code></p>
+</blockquote>
+<h2 id="step-2-configure-checkidpasswordagent-requirements">Step 2: Configure CheckIDPasswordAgent requirements</h2>
+<ol>
+<li>Run the following (also as <strong>administrator</strong>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c"># Create checkid directory and go into the new folder</span>
+<span class="n">mkdir</span> <span class="n">c</span><span class="p">:\</span><span class="n">checkid</span> <span class="p">;</span> <span class="nb">cd </span><span class="n">c</span><span class="p">:\</span><span class="n">checkid</span>
+
+<span class="c"># Create new Windows event log source &quot;CheckIDPasswordAgent&quot; visible in Application event log</span>
+<span class="nb">New-EventLog</span> <span class="n">-LogName</span> <span class="s2">&quot;Application&quot;</span> <span class="n">-Source</span> <span class="s2">&quot;CheckIDPasswordAgent&quot;</span>
+
+<span class="c"># Creates and saves a self-signed certificate named &quot;CheckIDAgent&quot; used for authenticating with password reset API</span>
+<span class="nv">$Certificate</span> <span class="p">=</span> <span class="nb">New-SelfSignedCertificate</span> <span class="n">-Subject</span> <span class="s2">&quot;CheckIDAgent&quot;</span> <span class="n">-NotAfter</span> <span class="p">(</span><span class="nb">Get-Date</span><span class="p">).</span><span class="n">AddYears</span><span class="p">(</span><span class="n">100</span><span class="p">)</span>
+<span class="no">[System.Convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="nv">$Certificate</span><span class="p">.</span><span class="n">Export</span><span class="p">(</span><span class="no">[System.Security.Cryptography.X509Certificates.X509ContentType]</span><span class="p">::</span><span class="n">Cert</span><span class="p">),</span> <span class="s2">&quot;InsertLineBreaks&quot;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-Path</span> <span class="s2">&quot;CheckIDAgent-</span><span class="p">$(</span><span class="nv">$env:COMPUTERNAME</span><span class="p">)</span><span class="s2">.cer&quot;</span>
+
+<span class="c"># Output thumbprint, certificate file name and agent id, required to configure the CheckID password agent run script</span>
+<span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;Thumbprint:       </span><span class="p">$(</span><span class="nv">$Certificate</span><span class="p">.</span><span class="n">ThumbPrint</span><span class="p">)</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Certificate file: CheckIDAgent-</span><span class="p">$(</span><span class="nv">$env:COMPUTERNAME</span><span class="p">)</span><span class="s2">.cer&quot;</span><span class="p">,</span><span class="s2">&quot;Agent id:         </span><span class="p">$(</span><span class="nb">New-Guid</span><span class="p">)</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span> <span class="p">|</span> <span class="nb">Write-Host</span>
+</code></pre></div>
+<p>PowerShell will generate output (example below).
+Copy it and save it as you'll be needing this later on to configure and run the CheckID Agent.</p>
+<div class="highlight"><pre><span></span><code>Thumbprint:       905A03B4EBF6B25E7986B6E0C20172F74988C373
+Certificate file: CheckIDAgent-&lt;SERVERNAME&gt;.cer
+Agent id:         a628f707-6c25-596e-8424-4249fa0e14b9
+</code></pre></div>
+<h2 id="step-3-consent-to-fortytwo-universe-our-api-and-create-an-entra-app-registration-for-the-password-reset-agent">Step 3: Consent to Fortytwo Universe (our API) and create an Entra app registration for the password reset agent</h2>
+<ol>
+<li>
+<p>As a <strong>global administrator</strong>, admin consent the Fortytwo Universe API: <a href="https://login.microsoftonline.com/common/adminconsent?client_id=2808f963-7bba-4e66-9eee-82d0b178f408">https://login.microsoftonline.com/common/adminconsent?client_id=2808f963-7bba-4e66-9eee-82d0b178f408</a><br />
+<img alt="Grant admin consent for Fortytwo Universe API" src="../media/adminconsentuniverse.png" /></p>
+<blockquote>
+<p><strong>Note!</strong></p>
+<p>After <strong>successfully</strong> granting admin consent you may get an error page.
+This simply means that there is no redirect URI configured on the app registration.
+The admin consent process is complete.</p>
+<p>To verify that the admin consent was successful, look in <strong>Enterprise applications</strong>:
+<img alt="Enterprise application Fortytwo Universe" src="../media/enterpriseappuniverse.png" /></p>
+</blockquote>
+</li>
+<li>
+<p>As a <strong>Cloud Application Administrator</strong> (or more privileged admin), in <strong>Entra ID</strong>, go to <strong>App registrations</strong> and select <strong>New registration</strong></p>
+</li>
+<li>
+<p>Give it a name (e.g. <em>CheckIDAgent</em>) and select <strong>Register</strong></p>
+</li>
+<li>
+<p>Copy and save the <strong>Client ID</strong> and <strong>Tenant ID</strong>
+<img alt="Get app id and directory id" src="../media/20250905140155.png" /></p>
+</li>
+<li>
+<p>Under <strong>Certificates &amp; secrets</strong>, upload the certificate file created in <a href="#step-2-configure-checkidpasswordagent-requirements"><strong><em>Step 2</em></strong></a>
+<img alt="Upload certificate" src="../media/20250905140307.png" /></p>
+</li>
+<li>
+<p>Under <strong>API permissions</strong>, click <strong>Add a permission</strong>, select <strong>APIs my organization uses</strong> and locate <strong>Fortytwo Universe</strong>
+<img alt="Locate Fortytwo Universe API" src="../media/20250905140407.png" /></p>
+</li>
+<li>
+<p>Under <strong>Application permissions</strong>, check <strong>checkid_agent.all</strong> and click <strong>Add permissions</strong>
+<img alt="Add checkid_agent.all API permission" src="../media/20250905140444.png" /></p>
+</li>
+<li>
+<p>Select <strong>Grant admin consent</strong>
+<img alt="Grant admin consent for Fortytwo Universe API permission" src="../media/20250905140535.png" /></p>
+</li>
+</ol>
+<h2 id="step-4-create-a-run-file-to-test-the-checkid-agent-configuration">Step 4: Create a run file to test the CheckID Agent configuration</h2>
+<p>Create a new PowerShell file <code>C:\checkid\run.ps1</code>.
+Replace placeholder values (for thumbprint, clientid, tenantid) with output from <a href="#step-2-configure-checkidpasswordagent-requirements">Step 2 - Configure CheckIDPasswordAgent requirements</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Install and auto update the PasswordAgent module</span>
+<span class="nb">Install-Module</span> <span class="n">Fortytwo</span><span class="p">.</span><span class="n">CheckID</span><span class="p">.</span><span class="n">PasswordAgent</span> <span class="n">-Confirm</span><span class="p">:</span><span class="nv">$false</span> <span class="n">-Force</span> <span class="n">-Verbose</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<span class="nb">Import-Module</span> <span class="n">Fortytwo</span><span class="p">.</span><span class="n">CheckID</span><span class="p">.</span><span class="n">PasswordAgent</span> <span class="n">-Force</span>
+
+<span class="nb">Add-EntraIDClientCertificateAccessTokenProfile</span> <span class="p">`</span>
+    <span class="n">-Resource</span> <span class="s2">&quot;2808f963-7bba-4e66-9eee-82d0b178f408&quot;</span> <span class="p">`</span>
+    <span class="n">-Thumbprint</span> <span class="s2">&quot;THUMBPRINT_FROM_STEP2&quot;</span> <span class="p">`</span>
+    <span class="n">-ClientId</span> <span class="s2">&quot;CLIENT_ID_FROM_STEP3&quot;</span> <span class="p">`</span>
+    <span class="n">-TenantId</span> <span class="s2">&quot;TENANT_ID_FROM_STEP3&quot;</span>
+
+<span class="nb">Connect-CheckIDPasswordAgent</span> <span class="p">`</span>
+    <span class="n">-AgentID</span> <span class="s2">&quot;AGENTID_FROM_STEP2&quot;</span> <span class="p">`</span>
+    <span class="n">-Verbose</span>
+
+<span class="nb">Start-CheckIDPasswordAgentListener</span> <span class="n">-Sleep</span> <span class="n">2</span> <span class="n">-Verbose</span> <span class="n">-Debug</span>
+</code></pre></div>
+<h2 id="step-5-test-the-checkid-agent-manually">Step 5: Test the CheckID Agent manually</h2>
+<ol>
+<li>
+<p>Open a PowerShell 7 window (pwsh.exe) as <strong>administrator</strong></p>
+</li>
+<li>
+<p>Run: <code>cd c:\checkid ; . c:\checkid\run.ps1</code></p>
+<p>At this point, you can test out CheckID and see that a password change is received by the agent.</p>
+<blockquote>
+<p><strong>Note!</strong></p>
+<p>The reset password operation will only be successful if your user holds sufficient Active Directory privileges</p>
+<p>If you get stopped by strict execution policy see <em><a href="#powershell-execution-policy">PowerShell execution policy</a></em>.</p>
+</blockquote>
+<p>If the agent starts successfully it will create output similar like this:</p>
+<div class="highlight"><pre><span></span><code>VERBOSE: Generating RSA key pair for encryption
+VERBOSE: Registering CheckIDPasswordAgent with AgentID a628f707-6c25-596e-8424-4249fa0e14b9 and TenantID b1fa17-9118-43ed-107e-1be368b7d2b0 to api.fortytwo.io
+VERBOSE: Requested HTTP/1.1 POST with 603-byte payload
+VERBOSE: Received HTTP/1.1 response of content type application/json of unknown size
+VERBOSE: CheckIDPasswordAgent registered successfully: {&quot;agentId&quot;:&quot;a628f707-6c25-596e-8424-4249fa0e14b9&quot;}
+VERBOSE: Starting CheckIDPasswordAgent listener with a sleep interval of 2 seconds
+VERBOSE: Requested HTTP/1.1 GET with 0-byte payload
+VERBOSE: Received HTTP/1.1 response of content type application/json of unknown size
+VERBOSE: Content encoding: utf-8
+VERBOSE: No requests found for agent a628f707-6c25-596e-8424-4249fa0e14b9
+VERBOSE: No requests found, sleeping for 2 seconds
+VERBOSE: Requested HTTP/1.1 GET with 0-byte payload
+VERBOSE: Received HTTP/1.1 response of content type application/json of unknown size
+VERBOSE: Content encoding: utf-8
+VERBOSE: No requests found for agent a628f707-6c25-596e-8424-4249fa0e14b9
+VERBOSE: No requests found, sleeping for 2 seconds
+</code></pre></div>
+</li>
+<li>
+<p>Open Event Viewer, expand Windows Logs and look into Application event log.
+   There should now be logs with source <strong>CheckIDPasswordAgent</strong>.
+   <img alt="CheckIDPasswordAgent event logs" src="../media/eventlogs.png" /></p>
+</li>
+</ol>
+<h3 id="powershell-execution-policy">PowerShell Execution Policy</h3>
+<p>If script execution is stopped you can temporarily (or permanently) modify the current execution policy:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ExecutionPolicy</span> <span class="n">-List</span>
+<span class="nv">$originalExecutionPolicy</span> <span class="p">=</span> <span class="nb">Get-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
+</code></pre></div>
+<p>When you have verified that the CheckID Agent can run successfully, set execution policy back to it's original setting:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="nv">$originalExecutionPolicy</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
+</code></pre></div>
+<h2 id="step-6-create-and-run-the-checkid-agent-as-a-scheduled-task">Step 6: Create and run the CheckID Agent as a scheduled task</h2>
+<ol>
+<li>
+<p>As a user with <strong>domain admin</strong> privileges, create a gMSA (group managed service account) for the scheduled task to run as:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Remember to include a trailing &#39;$&#39;, after computername, if configuring a different (or additional) server principal(s) to retrieve the gMSA password</span>
+<span class="nb">New-ADServiceAccount</span> <span class="n">-Name</span> <span class="s2">&quot;checkidagent&quot;</span> <span class="n">-PrincipalsAllowedToRetrieveManagedPassword</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:COMPUTERNAME</span><span class="p">)</span><span class="s2">$&quot;</span> <span class="n">-DNSHostname</span> <span class="s2">&quot;checkid.no&quot;</span>
+
+<span class="c"># Verify that the computer can use the group managed service account</span>
+<span class="nb">Test-ADServiceAccount</span> <span class="n">-Identity</span> <span class="n">checkidagent</span> <span class="n">-Verbose</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note!</strong></p>
+<p>If the Test-ADServiceAccount is successful it will return <strong><em>True</em></strong></p>
+<p><code>Test-ADServiceAccount -Identity checkidagent -Verbose</code><br />
+VERBOSE: Performing the operation "Test" on target "CN=checkidagent,CN=Managed Service Accounts,DC=fabrikam,DC=com".<br />
+<strong>True</strong></p>
+<p>If the test fails, download script <a href="https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/Test-gMSAencryptionSettings.ps1"><strong>Test-gMSAencryptionSettings.ps1</strong></a>, from Fortytwo public GitHub repository, for help with troubleshooting.</p>
+</blockquote>
+</li>
+<li>
+<p>Assign the gMSA the reset password permission on an organizational unit (OUs) in Active Directory  </p>
+<p>The <strong>PowerShell</strong> way</p>
+<ol>
+<li>Download <a href="https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/Delegate-PasswordReset.ps1">Delegate-PasswordReset.ps1</a>, from Fortytwo public GitHub repository.</li>
+<li>Run script as a user with <strong>domain admin</strong> privileges. Provide group managed service account name and distinguished name of where to apply the reset password privilege:<br />
+<code>Delegate-PasswordReset.ps1 -AccountSam "checkidagent$" -DistinguishedName "OU=users,OU=organization,DC=fabrikam,DC=com"</code></li>
+</ol>
+<p>Removing the delegated permission can easily be performed in Active Directory Users and Computers:</p>
+<p><img alt="Remove Reset Password delegation" src="../media/aducremovedelegation.png" /></p>
+<p>Using AD tool <strong>dsacls</strong> (see <a href="#requirements">requirements - AD PowerShell RSAT tools</a>)</p>
+<ol>
+<li>
+<p>Run as a user with <strong>domain admin</strong> privileges (adjust the OU path and domain name):</p>
+<blockquote>
+<p><strong>Note</strong>!</p>
+<p>If running dsacls in a PowerShell 7 shell <strong><em>make sure</em></strong> there are <strong>single apostrophes</strong> enclosing the final argument.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c"># Add Reset Password permission</span>
+<span class="n">dsacls</span> <span class="s2">&quot;OU=Users,OU=Organization,DC=FABRIKAM,DC=COM&quot;</span> <span class="p">/</span><span class="n">I</span><span class="p">:</span><span class="n">S</span> <span class="p">/</span><span class="n">G</span> <span class="s1">&#39;fabrikam.com\checkidagent$:CA;Reset Password;user&#39;</span>
+<span class="n">dsacls</span> <span class="s2">&quot;OU=Users,OU=Organization,DC=FABRIKAM,DC=COM&quot;</span> <span class="p">/</span><span class="n">I</span><span class="p">:</span><span class="n">S</span> <span class="p">/</span><span class="n">G</span> <span class="s1">&#39;fabrikam.com\checkidagent$:rpwp;PwdlastSet;user&#39;</span>
+<span class="n">dsacls</span> <span class="s2">&quot;OU=Users,OU=Organization,DC=FABRIKAM,DC=COM&quot;</span> <span class="p">/</span><span class="n">I</span><span class="p">:</span><span class="n">S</span> <span class="p">/</span><span class="n">G</span> <span class="s1">&#39;fabrikam.com\checkidagent$:rpwp;lockoutTime;user&#39;</span>
+
+<span class="c"># Verify Reset Password permission</span>
+<span class="c"># Because the gMSA is special account (classified as a machine account) it&#39;s sAMAccountName will have a trailing &#39;$&#39;, visible from the output</span>
+<span class="n">dsacls</span> <span class="s2">&quot;OU=Users,OU=Organization,DC=FABRIKAM,DC=COM&quot;</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-SimpleMatch</span> <span class="s2">&quot;checkid&quot;</span>
+
+<span class="n">Allow</span> <span class="n">FABRIKAM</span><span class="p">\</span><span class="n">checkidagent</span><span class="p">$</span>  <span class="n">Reset</span> <span class="n">Password</span>
+<span class="n">Allow</span> <span class="n">FABRIKAM</span><span class="p">\</span><span class="n">checkidagent</span><span class="p">$</span>  <span class="n">SPECIAL</span> <span class="n">ACCESS</span> <span class="k">for</span> <span class="n">pwdLastSet</span>
+<span class="n">Allow</span> <span class="n">FABRIKAM</span><span class="p">\</span><span class="n">checkidagent</span><span class="p">$</span>  <span class="n">SPECIAL</span> <span class="n">ACCESS</span> <span class="k">for</span> <span class="n">lockoutTime</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># Remove permissions assigned to (group managed service) account</span>
+<span class="n">dsacls</span> <span class="s2">&quot;OU=Users,OU=Organization,DC=FABRIKAM,DC=COM&quot;</span> <span class="p">/</span><span class="nb">R </span><span class="s1">&#39;FABRIKAM\checkidagent$&#39;</span>
+
+<span class="c"># Verify that Reset Password permissions have been removed</span>
+<span class="n">dsacls</span> <span class="s2">&quot;OU=Users,OU=Organization,DC=FABRIKAM,DC=COM&quot;</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-SimpleMatch</span> <span class="s2">&quot;checkid&quot;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note!</strong></p>
+<p><em>ONLY</em> when run in with PowerShell 7 the output of Select-String will look like this:</p>
+<p>Allow FABRIKAM\←[7mcheckid←[0magent$</p>
+<p>Add <strong>-NoEmphasis</strong> and it will look as expected, as when run with PowerShell 5:</p>
+<p>Allow FABRIKAM\checkidagent$    Reset Password</p>
+<p>"<em>By default, PowerShell 7 highlights the matched string. To turn this off, the -NoEmphasis parameter must be specified.</em>
+<em>Prior versions don't have the built-in capabilities to highlight matched strings.</em>"</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>
+<p>Assign permissions to access the <strong>CheckIDAgent</strong> certificate private key</p>
+<ol>
+<li>
+<p>As <strong>administrator</strong>, open <code>certlm.msc</code> (shortcut for "Manage computer certificates" in Control panel)</p>
+</li>
+<li>
+<p>Right-click certificate <strong>CheckIDAgent</strong></p>
+</li>
+<li>
+<p>Select <strong>Manage Private Keys</strong><br />
+<img alt="Managed Private Keys for CheckIDAgent certificate" src="../media/managecertkeypermissions.png" /></p>
+</li>
+<li>
+<p>When adding a group managed service account make sure to select "Service accounts"
+<img alt="Enable service account object type search" src="../media/searchserviceaccounts.png" /></p>
+</li>
+<li>
+<p>Allow any account that will be running the CheckID Agent <strong>Read</strong> permission to the certificate's private key
+<img alt="Assign Read permission to CheckIDAgent certificate" src="../media/readcertkeypermission.png" /></p>
+</li>
+</ol>
+</li>
+<li>
+<p>For gMSA to run a scheduled task, add the "User Rights Assignment" <em>Log on as a batch job</em></p>
+<p>Using <strong>Local Security Policy</strong> in Administrative Tools</p>
+<ol>
+<li>
+<p>As <strong>administrator</strong>, open <code>secpol.msc</code> (shortcut for "Local Security Policy")
+<img alt="Local Security Policy - Log on as a batch job" src="../media/logonasabatchjob.png" /></p>
+<blockquote>
+<p><strong>Tip!</strong></p>
+<p>Use gpupdate if change isn't effective immediately (if scheduled task won't start):</p>
+<p><code>gpupdate /target:computer /force</code></p>
+</blockquote>
+</li>
+</ol>
+<p>The <strong>PowerShell</strong> way</p>
+</li>
+<li>
+<p>Download <a href="https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/Add-LogonAsABatchJobRight.ps1">Add-LogonAsABatchJobRight.ps1</a> from Fortytwo public GitHub repository and save it in c:\checkid</p>
+</li>
+<li>
+<p>Run <code>Add-LogonAsABatchJobRight -AccountSam checkidgMSA$</code></p>
+</li>
+<li>
+<p>To remove the permission, run <code>Add-LogonAsABatchJobRight -AccountSam checkidgMSA$ -Remove</code></p>
+</li>
+<li>
+<p><strong>RECOMMENDED</strong><br />
+   To run a scheduled task using a gMSA the scheduled task must be created programmatically</p>
+</li>
+<li>
+<p>Download <a href="https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/Register-ScheduledTasks.ps1">Register-ScheduledTasks.ps1</a> from Fortytwo public GitHub repository and save it in c:\checkid</p>
+</li>
+<li>
+<p>Download <a href="https://raw.githubusercontent.com/fortytwoservices/powershell/refs/heads/main/checkid/password-agent/StartStop-CheckIDAgentListener.ps1">StartStop-CheckIDAgentListener.ps1</a> from Fortytwo public GitHub repository and save it in c:\checkid</p>
+</li>
+<li>
+<p>Configure <strong>StartStop-CheckIDAgentListener.ps1</strong> with configuration from <strong>run.ps1</strong>, which was verified in <a href="#step-5-test-the-checkid-agent-manually">Step 5 - Test the Checkid Agent manually</a><br />
+    Use a text editor, open <strong>c:\checkid\run.ps1</strong>, copy and replace the <em>Add-EntraClientCertificateAccessTokenprofile</em> and <em>Connect-CheckIDPasswordAgent</em> settings placeholder settings in <strong>StartStop-CheckIDAgentListener.ps1</strong> (shown below):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-EntraIDClientCertificateAccessTokenProfile</span> <span class="p">`</span>
+    <span class="n">-Resource</span> <span class="s2">&quot;2808f963-7bba-4e66-9eee-82d0b178f408&quot;</span> <span class="p">`</span>
+    <span class="n">-Thumbprint</span> <span class="s2">&quot;&lt;actual thumbprint&gt;&quot;</span> <span class="p">`</span>
+    <span class="n">-ClientId</span> <span class="s2">&quot;&lt;app registration app id&gt;&quot;</span> <span class="p">`</span>
+    <span class="n">-TenantId</span> <span class="s2">&quot;&lt;Entra tenant id&gt;&quot;</span>
+
+<span class="nb">Connect-CheckIDPasswordAgent</span> <span class="p">`</span>
+    <span class="n">-AgentID</span> <span class="s2">&quot;&lt;actual agent id&gt;&quot;</span> <span class="p">`</span>
+    <span class="n">-Verbose</span>
+</code></pre></div>
+<ol>
+<li>Create CheckID Password Agent scheduled task (default gMSA name: <strong>checkidadgent$</strong>, default script path <strong>c:\checkid\StartStop-CheckIDAgentListener.ps1</strong>)</li>
+</ol>
+<p>As <strong>administrator</strong>, open a PowerShell 7 window and run: <code>c:\checkid\Register-ScheduledTasks.ps1</code><br />
+To address a different gMSA and run script name / path use:
+<code>c:\checkid\Register-ScheduledTasks.ps1 -script c:\checkid\run.ps1 -gMSA checkidgMSA$</code>
+(remember a trailing $ when using a gMSA)</p>
+<blockquote>
+<p><strong>Tip!</strong></p>
+<p>The scheduled task runs the script with parameter <strong>-ExecutionPolicy Bypass</strong> to avoid PowerShell execution policy settings.<br />
+For <em>interactive</em> script execution, you may need to see <strong><a href="#powershell-execution-policy">PowerShell execution policy</a></strong> to alter effective policy.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>OPTIONAL</strong><br />
+   Create a scheduled task and run it using a (<strong>non</strong>-<em>managed group</em>) service account</p>
+</li>
+<li>
+<p>Runs every 2 minutes (so it will restart the task if it fails)
+   <img alt="Scheduled task trigger" src="../media/scheduledtasktrigger.png" /></p>
+</li>
+<li>
+<p>Runs the action <code>pwsh -executionPolicy bypass -file c:\checkid\run.ps1</code>
+   <img alt="Scheduled task action" src="../media/scheduledtaskaction.png" /></p>
+</li>
+<li>
+<p>Do not run multiple instances<br />
+<img alt="Scheduled task settings" src="../media/scheduledtasksettings.png" /></p>
+</li>
+<li>
+<p>Configure scheduled task to "Run whether user is logged on or not"
+   <img alt="Scheduled task run options" src="../media/20250922135040.png" /></p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Made on the run 🏃
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.copy", "navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
