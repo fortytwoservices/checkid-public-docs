@@ -46,6 +46,6 @@ nav:
       - Guides/Custom-Security-Attributes.md
       - Guides/Configuring-Password-Agent.md
   - Conditional access:
-      - Conditional-Access/Onboarding-Group.md
+  #    - Conditional-Access/Onboarding-Group.md
       - Conditional-Access/Authentication-Strength.md
       - Approved or protected app: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
