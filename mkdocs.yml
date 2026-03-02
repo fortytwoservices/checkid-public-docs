@@ -35,18 +35,23 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
+nav:
   - Home: index.md
-  - Getting Started: Getting-Started.md
-  - Identity Providers: Identity-Providers/Overview.md
-  - Guides and tutorials:
+
+  - Getting Started:
+      - Overview: Getting-Started.md
+      - Identity Providers: Identity-Providers/Overview.md
+  - Using CheckID:
       - Passkey Supported Devices: Guides/Supported-Devices.md
       - User Journey Example: Guides/User-Journey-Example.md
       - User Journey Detailed: Guides/User-Journey-Detailed.md
-      - Guides/Custom-Domain-Setup.md
-      - Guides/Custom-Branding.md
-      - Guides/Custom-Security-Attributes.md
-      - Guides/Configuring-Password-Agent.md
-  - Conditional access:
-  #    - Conditional-Access/Onboarding-Group.md
-      - Conditional-Access/Authentication-Strength.md
-      - Approved or protected app: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
+  - Configuration:
+      - Custom Domain Setup: Guides/Custom-Domain-Setup.md
+      - Custom Branding: Guides/Custom-Branding.md
+      - Custom Security Attributes: Guides/Custom-Security-Attributes.md
+      - Password Agent Installation: Guides/Configuring-Password-Agent.md
+  - Security & Access:
+      - Authentication Strength: Conditional-Access/Authentication-Strength.md
+      - Approved or Protected App: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
+  - Release Notes: 
+      - Change Log: Change-Log.md
