@@ -42,13 +42,14 @@ nav:
       - Overview: Getting-Started.md
       - Identity Providers: Identity-Providers/Overview.md
   - Using CheckID:
-      - Passkey Supported Devices: Guides/Supported-Devices.md
       - User Journey Example: Guides/User-Journey-Example.md
       - User Journey Detailed: Guides/User-Journey-Detailed.md
+      - Passkey Supported Devices: Guides/Supported-Devices.md
   - Configuration:
       - Custom Domain Setup: Guides/Custom-Domain-Setup.md
       - Custom Branding: Guides/Custom-Branding.md
       - Custom Security Attributes: Guides/Custom-Security-Attributes.md
+      - Custom Password Blacklist: Guides/Custom-Password-Blacklist.md
       - Password Agent Installation: Guides/Configuring-Password-Agent.md
   - Security & Access:
       - Authentication Strength: Conditional-Access/Authentication-Strength.md
