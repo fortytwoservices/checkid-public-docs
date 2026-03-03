@@ -20,14 +20,6 @@ To prevent simple bypass techniques, CheckID applies password normalisation befo
 - Converting the password to lowercase  
 - Applying common character substitutions (e.g. `@ → a`, `$ → s`, `0 → o`)
 
-### Optional Fuzzy Matching
-
-CheckID also supports optional fuzzy matching using **edit distance of 1** (for example, detecting small typos or near-matches).
-
-- This is **not enabled by default**
-- It must be explicitly enabled via our team.
-- Whether it is enabled depends on customer requirements (security posture vs usability)
-
 This ensures that trivial variations are detected when the base term (e.g. `password`) is banned:
 
 - `Password1`
@@ -35,7 +27,6 @@ This ensures that trivial variations are detected when the base term (e.g. `pass
 - `Pa$$word`
 - `passw0rd123`
 
-When fuzzy matching is enabled, additional near-matches may also be rejected.
 
 ## Configuration and Submission of List
 
