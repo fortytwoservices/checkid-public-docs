@@ -1,4 +1,4 @@
-# Feature Overview
+# What is CheckID?
 
 CheckID helps organizations onboard users into Microsoft Entra ID securely, quickly, and with less IT overhead.
 
