@@ -11,31 +11,31 @@ CheckID helps organizations onboard users into Microsoft Entra ID securely, quic
 
 ## Core Capabilities
 
-## Identity Verification and Account Claiming
+### Identity Verification and Account Claiming
 
 Users authenticate with supported national or banking identity providers, then select the account they should onboard.
 
-## Temporary Access Pass (TAP) Bootstrap
+### Temporary Access Pass (TAP) Bootstrap
 
 CheckID generates a TAP and guides the user through Microsoft Authenticator setup so the account is ready for modern authentication.
 
-## Passkey-First Onboarding
+### Passkey-First Onboarding
 
 Users can register passkey-capable authentication during onboarding, aligning with phishing-resistant targets.
 
-## Conditional Access Compatibility
+### Conditional Access Compatibility
 
 CheckID supports onboarding in environments with strict Conditional Access by enabling temporary exception patterns (for example onboarding group workflows).
 
-## Optional Password Path
+### Optional Password Path
 
 For hybrid or legacy dependencies, CheckID can support password setup with policy checks and optional password agent integration.
 
-## Custom Security Attributes Support
+### Custom Security Attributes Support
 
 CheckID can read and use custom security attributes for matching and policy-aware onboarding scenarios.
 
-## Branding and Domain Customization
+### Branding and Domain Customization
 
 Organizations can customize domain, logo, text, and styling for a consistent user experience.
 
