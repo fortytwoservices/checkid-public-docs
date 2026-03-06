@@ -1,4 +1,4 @@
-# Welcome to CheckID
+# Welcome to CheckID Documentation
 
 **CheckID** is a secure and user-friendly onboarding solution that simplifies the first-time sign-in experience for new employees in your organization.
 

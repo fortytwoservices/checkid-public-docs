@@ -27,7 +27,6 @@ This ensures that trivial variations are detected when the base term (e.g. `pass
 - `Pa$$word`
 - `passw0rd123`
 
-
 ## Configuration and Submission of List
 
 ### List Creation

@@ -15,7 +15,7 @@ Visit the following URL to review and approve the necessary permissions:
 ### Permissions requested
 
 | Permission | Why it’s needed |
-|------------|------------------|
+| -- | -- |
 | [**User.Read.All**](https://learn.microsoft.com/graph/permissions-reference#userreadall) | Allows CheckID to locate and read user account details in your tenant |
 | [**UserAuthenticationMethod.ReadWrite.All**](https://learn.microsoft.com/graph/permissions-reference#userauthenticationmethodreadwriteall) | Allows CheckID to create a Temporary Access Pass (TAP) for users |
 | [**CustomSecAttributeAssignment.Read.All**](https://learn.microsoft.com/graph/permissions-reference#customsecattributeassignmentreadall) | Enables CheckID to read custom attribute assignments. This permission has no effect unless the CheckID service principal is explicitly assigned the **Attribute assignment reader** role in Microsoft Entra. |
