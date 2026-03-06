@@ -35,24 +35,34 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
-nav:
   - Home: index.md
 
-  - Getting Started:
-      - Overview: Getting-Started.md
+  - Get Started:
+      - What is CheckID?: Feature-Overview.md
+      - End-User Walkthrough: Guides/User-Journey-Example.md
+      - How the Flow Works: Guides/User-Journey-Detailed.md
+
+  - Onboarding:
+      - First-Time Setup: Getting-Started.md
+      - Phishing-Resistant Setup: Getting-Started-Phishing-Resistant.md
       - Identity Providers: Identity-Providers/Overview.md
-  - Using CheckID:
-      - User Journey Example: Guides/User-Journey-Example.md
-      - User Journey Detailed: Guides/User-Journey-Detailed.md
+     # - Configure ID-porten (NO): Identity-Providers/Configure-ID-porten.md
       - Passkey Supported Devices: Guides/Supported-Devices.md
-  - Configuration:
-      - Custom Domain Setup: Guides/Custom-Domain-Setup.md
-      - Custom Branding: Guides/Custom-Branding.md
-      - Custom Security Attributes: Guides/Custom-Security-Attributes.md
-      - Custom Password Blacklist: Guides/Custom-Password-Blacklist.md
-      - Password Agent Installation: Guides/Configuring-Password-Agent.md
-  - Security & Access:
-      - Authentication Strength: Conditional-Access/Authentication-Strength.md
-      - Approved or Protected App: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
-  - Release Notes: 
+
+  - Configure & Customise:
+      - Experience Customisation:
+          - Custom Domain: Guides/Custom-Domain-Setup.md
+          - Custom Branding: Guides/Custom-Branding.md
+      - Identity Data & Controls:
+          - Custom Security Attributes: Guides/Custom-Security-Attributes.md
+          - Time Stamping: Guides/Time-Stamping.md
+          - Password Blacklist: Guides/Custom-Password-Blacklist.md
+          - Password Agent: Guides/Configuring-Password-Agent.md
+      - Conditional Access Compatibility:
+          - Authentication Strength: Conditional-Access/Authentication-Strength.md
+          - Approved/Protected App Policy: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
+          - Onboarding Group: Conditional-Access/Onboarding-Group.md
+
+  - Release Notes:
       - Change Log: Change-Log.md
+
