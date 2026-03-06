@@ -23,17 +23,17 @@ CheckID generates a TAP and guides the user through Microsoft Authenticator setu
 
 Users can register passkey-capable authentication during onboarding, aligning with phishing-resistant targets.
 
-### Conditional Access Compatibility
-
-CheckID supports onboarding in environments with strict Conditional Access by enabling temporary exception patterns (for example onboarding group workflows).
-
 ### Optional Password Path
 
 For hybrid or legacy dependencies, CheckID can support password setup with policy checks and optional password agent integration.
 
 ### Custom Security Attributes Support
 
-CheckID can read and use custom security attributes for matching and policy-aware onboarding scenarios.
+CheckID can read and use custom security attributes.
+
+### Time Stamping
+
+CheckID can write a timestamp to a configured custom security attribute when an account is claimed or reset, giving identity teams better lifecycle visibility and lightweight auditability.
 
 ### Branding and Domain Customization
 
