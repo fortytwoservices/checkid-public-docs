@@ -27,10 +27,6 @@ The following elements can be customized:
 
 - Warning, error and success messages use brand-aligned status colors.
 
-### Footer and Surfaces
-
-- Background and neutral colors are applied across panels, cards and separators.
-
 ## How requests work
 
 Customers provide our team:
