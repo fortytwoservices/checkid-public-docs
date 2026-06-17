@@ -25,11 +25,11 @@ The following elements can be customized:
 
 ### Status Messages
 
-- Warning, error and success messages use brand-aligned status colors.
+- Warning, error and success messages can use brand-aligned status colors.
 
-## How requests work
+## Want to Customise your CheckID experience?
 
-Customers provide our team:
+You can provide our team:
 
 - Logo and favicon files
 - Preferred brand color palette
