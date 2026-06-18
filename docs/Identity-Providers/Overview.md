@@ -53,3 +53,11 @@ Currently we support the below providers.
 **Countries:** Norway, Sweden, Denmark, Finland
 
 **Security level:** Low
+
+## Signicat VideoID Substanial
+
+**Countries:** Global
+
+**Security level:** Medium
+
+**More Information:** [Signicat VideoID Information Link](https://www.signicat.com/products/identity-proofing/video-id])

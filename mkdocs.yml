@@ -32,7 +32,11 @@ extra_css:
 
 markdown_extensions:
   - attr_list
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 nav:
   - Home: index.md
@@ -65,4 +69,5 @@ nav:
 
   - Release Notes:
       - Change Log: Change-Log.md
+      - Account Setup Check: Update-Account-Check.md
 
