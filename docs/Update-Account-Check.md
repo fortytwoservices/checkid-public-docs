@@ -1,6 +1,6 @@
 # Account Setup confirms your sign-in method before completion
 
-**Date:** 17th June 2026
+**Date:** 25th June 2026
 
 Users can now only finish account setup in CheckID once a supported sign-in method is ready on their account. This helps make sure their account is actually ready to use before they leave the setup flow.
 
