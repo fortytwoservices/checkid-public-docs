@@ -60,4 +60,4 @@ Currently we support the below providers.
 
 **Security level:** Medium
 
-**More Information:** [Signicat VideoID Information Link](https://www.signicat.com/products/identity-proofing/video-id])
+**More Information:** [Signicat VideoID Information Link](https://www.signicat.com/products/identity-proofing/video-id)
