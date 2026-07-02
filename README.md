@@ -1,5 +1,9 @@
 # checkid-public-docs
 
+## External Website
+
+[CheckID Documentation](https://docs.checkid.no/)
+
 ## Running locally
 
 ```PowerShell
