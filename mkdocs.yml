@@ -67,7 +67,7 @@ nav:
           - Approved/Protected App Policy: Conditional-Access/Require-Approved-Or-Protected-App-Policy.md
           - Onboarding Group: Conditional-Access/Onboarding-Group.md
 
-  - Release Notes:
+  - Release Notes and FAQ:
       - Change Log: Change-Log.md
       - Account Setup Check: Update-Account-Check.md
-
+      - FAQ: FAQ.md
