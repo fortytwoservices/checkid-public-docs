@@ -10,7 +10,7 @@ CheckID processes only the minimum identity attributes required to complete auth
 
 The customer remains the Data Controller; identity records remain in the customer’s Entra ID.
 
-## who has access to CheckID Platform?
+## Who has access to CheckID Platform?
 
 Access is restricted to authorized personnel only and is governed by Microsoft Entra ID, role-based access control, and privileged access workflows (PIM). Only approved administrators/operators can manage configuration, and access is controlled through auditable role assignments and least-privilege principles.
 
