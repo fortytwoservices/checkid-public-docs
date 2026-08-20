@@ -8,12 +8,19 @@ For å sette opp kobling mot ID-porten trenger CheckID en applikasjon registrert
 
 Følgende må fylles ut og/eller endres fra standardverdier:
 
-| Innstilling | Verdi |
-|-|-|
-| Applikasjonstype | web |
-| Autentiseringsmetode | client_secret_post |
-| Redirect uri-er | <https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/signin-oidc> |
-| Post logout redirect uri-er | <https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed> |
+| Innstilling                 | Verdi                                                       |
+| --------------------------- | ----------------------------------------------------------- |
+| Applikasjonstype            | web                                                         |
+| Autentiseringsmetode        | client_secret_post                                          |
+| Redirect URI-er             | <https://kundenavn.checkid.no/signin-oidc>                  |
+|                             | <https://onboarding.ditt-selskap.no/signin-oidc>            |
+| Post logout redirect URI-er | <https://kundenavn.checkid.no/>                             |
+|                             | <https://kundenavn.checkid.no/logout>                       |
+|                             | <https://kundenavn.checkid.no/logout/idporten-callback>     |
+|                             | <https://onboarding.domenenavn.no/>                         |
+|                             | <https://onboarding.domenenavn.no/logout>                   |
+|                             | <https://onboarding.domenenavn.no/logout/idporten-callback> |                                                         
+
 
 Det vi trenger tilbake:
 
@@ -54,19 +61,21 @@ Under **Levetid & Tokens**, la alt stå som standard.
 
 ![Levetid & Tokens](./media/image-3.png)
 
-Under **URI**, tilpass redirect uri-er så det matcher med CheckID bestillingen:
+Under **URI**, tilpass redirect URI-er så det matcher med CheckID bestillingen:
 
->Konfigurer flere uri-er ved å komma-separere dem (xxx,yyy)
->
->Din CheckID-kontakt bistår gjerne med uri-er.
-
-| Redirect uri-er |
+| Redirect URI-er |
 |-|
-| <https://kundeinstans.checkid.no/signin-oidc,https://onboarding.ditt-selskap.no/signin-oidc> |
+| <https://kundenavn.checkid.no/signin-oidc> |
+| <https://onboarding.ditt-selskap.no/signin-oidc> |
 
-| Post logout redirect uri-er |
+| Post logout redirect URI-er |
 |-|
-| <https://kundeinstans.checkid.no/completed,https://kundeinstans.checkid.no/,https://kundeinstans.checkid.no/v2/completed,https://onboarding.ditt-selskap.no/completed,https://onboarding.ditt-selskap.no/,https://onboarding.ditt-selskap.no/v2/completed> |
+| <https://kundenavn.checkid.no/> |
+| <https://kundenavn.checkid.no/logout> |
+| <https://kundenavn.checkid.no/logout/idporten-callback> |
+| <https://onboarding.domenenavn.no/> |
+| <https://onboarding.domenenavn.no/logout> |
+| <https://onboarding.domenenavn.no/logout/idporten-callback> |
 
 ![URI-er](./media/image-4.png)
 
