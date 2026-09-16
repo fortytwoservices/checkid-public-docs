@@ -57,6 +57,7 @@ nav:
       - Experience Customisation:
           - Custom Domain: Guides/Custom-Domain-Setup.md
           - Custom Branding: Guides/Custom-Branding.md
+          - Supported Languages and Locales: Guides/Locales.md
       - Identity Data & Controls:
           - Custom Security Attributes: Guides/Custom-Security-Attributes.md
           - Time Stamping: Guides/Time-Stamping.md
