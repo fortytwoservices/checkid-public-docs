@@ -12,7 +12,7 @@ Currently we support the below providers.
 
 **Security level:** High
 
-[ID-porten configuration guide](./Configure-ID-porten.md)
+**Configuration Guide:** [ID-porten configuration guide](./Configure-ID-porten.md)
 
 ## MitID
 
@@ -61,3 +61,5 @@ Currently we support the below providers.
 **Security level:** Medium
 
 **More Information:** [Signicat VideoID Information Link](https://www.signicat.com/products/identity-proofing/video-id)
+
+**Supported Documents:** [VideoID Supported Documents](VideoID-Supported-Documents.md)
