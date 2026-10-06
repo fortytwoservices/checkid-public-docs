@@ -1,0 +1,25 @@
+:root>* {
+    --md-primary-fg-color: #4d3ee4;
+    --md-accent-fg-color: #4d3ee4;
+
+    /* Footer */
+    --md-footer-bg-color--dark: #5e49de;
+
+    /* Links (light mode) */
+    --md-typeset-a-color: #2d00d5;
+}
+
+/* Light mode only: Add borders to images */
+[data-md-color-scheme="default"] .md-content img {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+/* Dark mode only: Adjust colors for readability */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #4d3ee4;
+    --md-accent-fg-color: #b3aaff;
+    --md-typeset-a-color: #b3aaff;
+    --md-typeset-a-color--hover: #ffffff;
+}
